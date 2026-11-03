@@ -288,7 +288,7 @@ void clearqueries()
     loopi(MAXQUERYFRAMES) queryframes[i].cleanup();
 }
 
-VAR(oqfrags, 0, 0, 64); // diagnóstico del congelamiento: oclusión apagada por defecto (ver docs/oclusion-adreno.md)
+VAR(oqfrags, 0, 8, 64); // oclusión encendida (diagnóstico de errores por llamada: oqerr)
 // 0: nunca bloquear esperando un resultado de oclusión (con 1 el driver se detenía y la pantalla se congelaba).
 VAR(oqwait, 0, 0, 1);
 
