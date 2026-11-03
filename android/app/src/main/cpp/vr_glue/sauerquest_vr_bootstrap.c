@@ -509,7 +509,10 @@ void android_vr_telemetry(const char *line)
 }
 
 int android_vr_unicast(void) { return VrTelemetry_HaveServer(); }
-#include "VrBuild.h" /* generada por tools/apk/build-apk.mjs en cada build */
+#include "VrBuild.h"
+
+/* Telemetría: frames en que el runtime pide dibujar y frames saltados (vrdraw/vrskip en sauvr). */
+int vrdrawn = 0, vrskipped = 0; /* generada por tools/apk/build-apk.mjs en cada build */
 #ifndef SAUVR_VNAME
 #define SAUVR_VNAME "dev"
 #endif
@@ -637,6 +640,7 @@ void *AppThreadFunction(void *parm)
     while (runStatus == -1) {
         double t0 = nowms();
         TBXR_FrameSetup();
+        if (gAppState.FrameState.shouldRender) vrdrawn++; else vrskipped++;
         double t1 = nowms(); vrGlueWait += t1 - t0;
 
         android_sauer_tick();
