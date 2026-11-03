@@ -1088,7 +1088,8 @@ void ovrApp_HandleSessionStateChanges(ovrApp* app, XrSessionState state) {
 			/* SUSTAINED_HIGH en vez de BOOST: BOOST sube los clocks por encima del rango
 			 * térmico sostenible y el visor acaba frenando. Para volver a BOOST (medir
 			 * el pico, sesiones de menos de un minuto) cambiar estas dos líneas. */
-			XrPerfSettingsLevelEXT cpuPerfLevel = XR_PERF_SETTINGS_LEVEL_SUSTAINED_HIGH_EXT;
+			/* CPU en BOOST: prueba de 72 fps sin cambiar la imagen (ver docs/plan-optimizacion-vr.md). La GPU queda en SUSTAINED_HIGH. */
+			XrPerfSettingsLevelEXT cpuPerfLevel = XR_PERF_SETTINGS_LEVEL_BOOST_EXT;
 			XrPerfSettingsLevelEXT gpuPerfLevel = XR_PERF_SETTINGS_LEVEL_SUSTAINED_HIGH_EXT;
 
 			PFN_xrPerfSettingsSetPerformanceLevelEXT pfnPerfSettingsSetPerformanceLevelEXT = NULL;
