@@ -288,28 +288,22 @@ void clearqueries()
     loopi(MAXQUERYFRAMES) queryframes[i].cleanup();
 }
 
-#ifdef __ANDROID__
-// Occlusion queries (this cvar's own world-geometry gating is separately
-// forced off in rendergeom() below, but rendermodel.cpp's MDL_CULL_QUERY
-// per-entity occlusion check -- bots, other players -- reads this same
-// cvar directly) confirmed broken on this Android/Adreno build: bots
-// rendered invisible even after the world-geometry fix, since that fix
-// only covered rendergeom()'s own local doOQ, not this shared cvar.
-// Capping the max to 0 covers every oqfrags-gated path at once.
-VAR(oqfrags, 0, 0, 0);
-#else
 VAR(oqfrags, 0, 8, 64);
-#endif
 VAR(oqwait, 0, 1, 1);
+
+// GLES 3 solo acepta los targets ANY_SAMPLES_PASSED (no SAMPLES_PASSED de escritorio): ver docs/oclusion-adreno.md
+#ifndef GL_ANY_SAMPLES_PASSED_CONSERVATIVE
+#define GL_ANY_SAMPLES_PASSED_CONSERVATIVE 0x8D6A
+#endif
 
 void startquery(occludequery *query)
 {
-    glBeginQuery_(GL_SAMPLES_PASSED, query->id);
+    glBeginQuery_(GL_ANY_SAMPLES_PASSED_CONSERVATIVE, query->id);
 }
 
 void endquery(occludequery *query)
 {
-    glEndQuery_(GL_SAMPLES_PASSED);
+    glEndQuery_(GL_ANY_SAMPLES_PASSED_CONSERVATIVE);
 }
 
 bool checkquery(occludequery *query, bool nowait)
@@ -327,7 +321,7 @@ bool checkquery(occludequery *query, bool nowait)
         glGetQueryObjectuiv_(query->id, GL_QUERY_RESULT, &fragments);
         query->fragments = fragments;
     }
-    return fragments < uint(oqfrags);
+    return fragments == 0;
 }
 
 static GLuint bbvbo = 0, bbebo = 0;
@@ -1538,25 +1532,7 @@ void rendergeom(float causticspass, bool fogpass)
     if(causticspass && (!causticscale || !causticmillis)) causticspass = 0;
 
     bool mainpass = !reflecting && !refracting && !drawtex && !glaring,
-#ifdef __ANDROID__
-         // oqfrags/oqgeom (occlusion queries, this codebase's own GPU
-         // hardware occlusion culling) default ON, unlike shadowmap --
-         // never specifically verified in a real, densely-populated
-         // scene on this Android/Adreno build before. Confirmed on-device
-         // via a GL_INVALID_ENUM bisection landing squarely inside
-         // rendergeom() (the only function that touches occlusion query
-         // objects) that this is broken here: distant world geometry
-         // stopped rendering entirely ("empty void/sky", only nearby
-         // things visible) -- consistent with the query mechanism
-         // reporting incorrect/unreliable occlusion results and
-         // over-aggressively culling anything not already known-visible,
-         // rather than a stereo or camera-math bug (matches this
-         // project's own established pattern of core GLES3-adjacent
-         // functionality misbehaving on this specific Adreno driver).
-         doOQ = false,
-#else
          doOQ = oqfrags && oqgeom && mainpass,
-#endif
          doZP = doOQ && zpass,
          doSM = shadowmap && !drawtex && !glaring;
     renderstate cur;
