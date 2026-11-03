@@ -288,7 +288,7 @@ void clearqueries()
     loopi(MAXQUERYFRAMES) queryframes[i].cleanup();
 }
 
-VAR(oqfrags, 0, 0, 64); // prueba A/B: oclusión apagada por defecto (ver docs/oclusion-adreno.md)
+VAR(oqfrags, 0, 8, 64); // oclusión encendida, solo para objetos lejanos (oqdist)
 VAR(oqwait, 0, 1, 1);
 
 // GLES 3 solo acepta los targets ANY_SAMPLES_PASSED (no SAMPLES_PASSED de escritorio): ver docs/oclusion-adreno.md
@@ -833,7 +833,8 @@ void renderdepthobstacles(const vec &bbmin, const vec &bbmax, float scale, float
     gle::disablevertex();
 }
 
-VAR(oqdist, 0, 256, 1024);
+// Oclusión solo para lo lejano: lo cercano se dibuja siempre (evita cortes por resultados de un frame antes).
+VAR(oqdist, 0, 384, 1024);
 VAR(zpass, 0, 1, 1);
 VAR(envpass, 0, 1, 1);
 
@@ -1564,7 +1565,7 @@ void rendergeom(float causticspass, bool fogpass)
         {
             if(va->geommax.z <= reflectz) continue;
         }
-        else if(doOQ && (zpass || va->distance > oqdist) && !insideva(va, camera1->o))
+        else if(doOQ && va->distance > oqdist && !insideva(va, camera1->o))
         {
             if(va->parent && va->parent->occluded >= OCCLUDE_BB)
             {
