@@ -1538,6 +1538,8 @@ static void rendergeommultipass(renderstate &cur, int pass, bool fogpass)
 }
 
 VAR(oqgeom, 0, 1, 1);
+// Diagnóstico de las líneas: con oqskip 0 las consultas se hacen pero ningún VA se salta.
+VAR(oqskip, 0, 0, 1);
 
 void rendergeom(float causticspass, bool fogpass)
 {
@@ -1552,6 +1554,10 @@ void rendergeom(float causticspass, bool fogpass)
     {
         flipqueries();
         vtris = vverts = 0;
+        // Resultados viejos tras un salto grande de cámara (teletransporte): se descartan.
+        static vec oqlastcam(-1e9f, -1e9f, -1e9f);
+        if(oqlastcam.dist(camera1->o) > 512) for(vtxarray *va = visibleva; va; va = va->next) { va->query = NULL; va->occluded = OCCLUDE_NOTHING; }
+        oqlastcam = camera1->o;
     }
     if(!doZP) 
     {
@@ -1597,7 +1603,7 @@ void rendergeom(float causticspass, bool fogpass)
                     if(cur.vbuf) disablevbuf(cur);
                     renderquery(cur, va->query, va);
                 }
-                continue;
+                if(oqskip) continue;
             }
         }
         else
