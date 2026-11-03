@@ -1109,7 +1109,7 @@ static void changebatchtmus(renderstate &cur, int pass, geombatch &b)
 }
 
 // Telemetría slotsw: cambios de textura (slot/vslot) al dibujar el mundo; cada uno corta un lote.
-int vrslotsw = 0;
+int vrslotsw = 0, vrswshader = 0, vrswvariant = 0;
 
 static void changeslottmus(renderstate &cur, int pass, Slot &slot, VSlot &vslot)
 {
@@ -1234,6 +1234,8 @@ static void renderbatch(renderstate &cur, int pass, geombatch &b)
         {
             if(rendered < 0)
             {
+                // Telemetría shdiff/shvar: cambio de shader distinto (ligado a la textura) frente a variante del mismo shader (luz o sombra).
+                { static Shader *vrlastshader = NULL; if(b.vslot.slot->shader != vrlastshader) vrswshader++; else vrswvariant++; vrlastshader = b.vslot.slot->shader; }
                 changeshader(cur, b.vslot.slot->shader, *b.vslot.slot, b.vslot, false);
                 rendered = 0;
                 gbatches++;
