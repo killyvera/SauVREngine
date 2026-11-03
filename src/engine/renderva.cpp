@@ -1108,8 +1108,12 @@ static void changebatchtmus(renderstate &cur, int pass, geombatch &b)
     }
 }
 
+// Telemetría slotsw: cambios de textura (slot/vslot) al dibujar el mundo; cada uno corta un lote.
+int vrslotsw = 0;
+
 static void changeslottmus(renderstate &cur, int pass, Slot &slot, VSlot &vslot)
 {
+    vrslotsw++;
     if(pass==RENDERPASS_LIGHTMAP)
     {
         GLuint diffusetex = slot.sts.empty() ? notexture->id : slot.sts[0].t->id;
