@@ -289,7 +289,8 @@ void clearqueries()
 }
 
 VAR(oqfrags, 0, 8, 64); // oclusión encendida, solo para objetos lejanos (oqdist)
-VAR(oqwait, 0, 1, 1);
+// 0: nunca bloquear esperando un resultado de oclusión (con 1 el driver se detenía y la pantalla se congelaba).
+VAR(oqwait, 0, 0, 1);
 
 // GLES 3 solo acepta los targets ANY_SAMPLES_PASSED (no SAMPLES_PASSED de escritorio): ver docs/oclusion-adreno.md
 #ifndef GL_ANY_SAMPLES_PASSED_CONSERVATIVE
