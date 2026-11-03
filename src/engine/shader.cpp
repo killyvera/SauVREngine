@@ -982,13 +982,11 @@ static void genshadowmapvariant(Shader &s, const char *sname, const char *vs, co
         "varying float smviewdist;\n";
     pssm.put(psdecl, strlen(psdecl));
 
-    // Desvanecimiento por distancia al jugador: 100% hasta shadowfade.x, 15% en shadowfade.y y 0 en shadowfade.z.
+    // Desvanecimiento por distancia al jugador: 100% hasta shadowfade.x y 0 en shadowfade.y (solo en el borde del mapa).
     const char *smfade =
         "float smfade(float d)\n"
         "{\n"
-        "    if(d <= shadowfade.x) return 1.0;\n"
-        "    if(d <= shadowfade.y) return mix(1.0, 0.15, (d - shadowfade.x)/(shadowfade.y - shadowfade.x));\n"
-        "    return max(0.0, mix(0.15, 0.0, (d - shadowfade.y)/(shadowfade.z - shadowfade.y)));\n"
+        "    return clamp((shadowfade.y - d)/(shadowfade.y - shadowfade.x), 0.0, 1.0);\n"
         "}\n";
     pssm.put(smfade, strlen(smfade));
 
