@@ -288,7 +288,7 @@ void clearqueries()
     loopi(MAXQUERYFRAMES) queryframes[i].cleanup();
 }
 
-VAR(oqfrags, 0, 8, 64);
+VAR(oqfrags, 0, 0, 64); // prueba A/B: oclusión apagada por defecto (ver docs/oclusion-adreno.md)
 VAR(oqwait, 0, 1, 1);
 
 // GLES 3 solo acepta los targets ANY_SAMPLES_PASSED (no SAMPLES_PASSED de escritorio): ver docs/oclusion-adreno.md
