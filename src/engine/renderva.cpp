@@ -315,8 +315,9 @@ bool checkquery(occludequery *query, bool nowait)
     {
         if(nowait || !oqwait)
         {
-            GLint avail;
-            glGetQueryObjectiv_(query->id, GL_QUERY_RESULT_AVAILABLE, &avail);
+            // GLES 3 no tiene glGetQueryObjectiv (pointer nulo: pc=0 al llamarlo); la versión sin signo sirve igual.
+            GLuint avail;
+            glGetQueryObjectuiv_(query->id, GL_QUERY_RESULT_AVAILABLE, &avail);
             if(!avail) return false;
         }
         glGetQueryObjectuiv_(query->id, GL_QUERY_RESULT, &fragments);
