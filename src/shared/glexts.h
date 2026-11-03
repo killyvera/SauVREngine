@@ -335,6 +335,8 @@ extern PFNGLDELETERENDERBUFFERSPROC     glDeleteRenderbuffers_;
 extern PFNGLGENFRAMEBUFFERSPROC         glGenRenderbuffers_;
 extern PFNGLRENDERBUFFERSTORAGEPROC     glRenderbufferStorage_;
 extern PFNGLCHECKFRAMEBUFFERSTATUSPROC  glCheckFramebufferStatus_;
+typedef void (APIENTRYP PFNGLINVALIDATEFRAMEBUFFERPROC) (GLenum target, GLsizei numAttachments, const GLenum *attachments);
+extern PFNGLINVALIDATEFRAMEBUFFERPROC    glInvalidateFramebuffer_;
 extern PFNGLBINDFRAMEBUFFERPROC         glBindFramebuffer_;
 extern PFNGLDELETEFRAMEBUFFERSPROC      glDeleteFramebuffers_;
 extern PFNGLGENFRAMEBUFFERSPROC         glGenFramebuffers_;

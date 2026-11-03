@@ -377,6 +377,16 @@ struct rendertarget
 
         if(scissoring) glDisable(GL_SCISSOR_TEST);
 
+#ifdef __ANDROID__
+        // Render por tiles (Adreno): la profundidad de esta pasada no se vuelve a leer, así que descartarla
+        // evita escribirla a memoria al terminar. Solo se lee el color (rendertex) y el blur usa otro FBO.
+        if(succeeded && glversion >= 300 && glInvalidateFramebuffer_)
+        {
+            static const GLenum depthattachment[1] = { GL_DEPTH_ATTACHMENT };
+            glInvalidateFramebuffer_(GL_FRAMEBUFFER, 1, depthattachment);
+        }
+#endif
+
         if(succeeded)
         {
             initialized = true;

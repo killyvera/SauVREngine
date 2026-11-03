@@ -135,6 +135,18 @@ De la conversación de diseño (mundo abierto, contrato hexagonal, servidor):
 - Servidor dedicado: reutilizar la red original (ENet) para el estado
   autoritativo; el visor nunca espera a la red para cabeza y manos.
 
+### Fase 5 · Opción B: Application SpaceWarp (fallback, no 72 reales)
+
+Extensión `XR_FB_space_warp`. La app renderiza a la mitad (p. ej. 36 fps reales) y entrega
+profundidad y vectores de movimiento por píxel; el runtime genera el cuadro intermedio a 72 Hz.
+
+- **A favor:** la app solo necesita 36 fps reales, así que los picos de tick de CPU dejan de tirar la imagen.
+- **En contra:** la mitad de los cuadros mostrados son sintéticos, va contra la meta de 72 cuadros reales;
+  artefactos en objetos que se mueven rápido, partículas, agua y zonas descubiertas al girar;
+  requiere un pase de vectores de movimiento compatible con multiview y sombras.
+- **Cuándo:** solo si las fases 1–2 no sostienen 72 reales en vistas densas. Verificar en la documentación
+  de OpenXR (`XR_FB_space_warp`) los requisitos de la versión del sistema del visor.
+
 ## 4. Protocolo de medición
 
 1. Mapa duel7, partida contra 4 bots, 60 s mirando a la zona de agua.

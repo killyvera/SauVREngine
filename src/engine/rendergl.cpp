@@ -142,6 +142,7 @@ PFNGLGENFRAMEBUFFERSPROC         glGenRenderbuffers_        = NULL;
 PFNGLRENDERBUFFERSTORAGEPROC     glRenderbufferStorage_     = NULL;
 PFNGLCHECKFRAMEBUFFERSTATUSPROC  glCheckFramebufferStatus_  = NULL;
 PFNGLBINDFRAMEBUFFERPROC         glBindFramebuffer_         = NULL;
+PFNGLINVALIDATEFRAMEBUFFERPROC   glInvalidateFramebuffer_   = NULL;
 PFNGLDELETEFRAMEBUFFERSPROC      glDeleteFramebuffers_      = NULL;
 PFNGLGENFRAMEBUFFERSPROC         glGenFramebuffers_         = NULL;
 PFNGLFRAMEBUFFERTEXTURE2DPROC    glFramebufferTexture2D_    = NULL;
@@ -463,6 +464,7 @@ void gl_checkextensions()
         glRenderbufferStorage_     = (PFNGLRENDERBUFFERSTORAGEPROC)    getprocaddress("glRenderbufferStorage");
         glCheckFramebufferStatus_  = (PFNGLCHECKFRAMEBUFFERSTATUSPROC) getprocaddress("glCheckFramebufferStatus");
         glBindFramebuffer_         = (PFNGLBINDFRAMEBUFFERPROC)        getprocaddress("glBindFramebuffer");
+        glInvalidateFramebuffer_   = (PFNGLINVALIDATEFRAMEBUFFERPROC)  getprocaddress("glInvalidateFramebuffer");
         glDeleteFramebuffers_      = (PFNGLDELETEFRAMEBUFFERSPROC)     getprocaddress("glDeleteFramebuffers");
         glGenFramebuffers_         = (PFNGLGENFRAMEBUFFERSPROC)        getprocaddress("glGenFramebuffers");
         glFramebufferTexture2D_    = (PFNGLFRAMEBUFFERTEXTURE2DPROC)   getprocaddress("glFramebufferTexture2D");
