@@ -371,7 +371,8 @@ int vrreflectdraws = 0, vrreflectvisible = 0; // telemetría: reflejos dibujados
 
 GLuint getwaterfalltex() { return waterfallrefraction.refracttex ? waterfallrefraction.refracttex : notexture->id; }
 
-VAR(oqwater, 0, 2, 2);
+// Oclusión de reflejos de agua apagada por defecto: al saltar un plano se queda el reflejo viejo y aparecen cortes horizontales.
+VAR(oqwater, 0, 0, 2);
 VARFP(waterfade, 0, 1, 1, { cleanreflections(); preloadwatershaders(); });
 
 void preloadwatershaders(bool force)
