@@ -835,7 +835,8 @@ void renderdepthobstacles(const vec &bbmin, const vec &bbmax, float scale, float
 
 // Oclusión solo para lo lejano: lo cercano se dibuja siempre (evita cortes por resultados de un frame antes).
 VAR(oqdist, 0, 384, 1024);
-VAR(zpass, 0, 1, 1);
+// Sin pase de profundidad previo: con oclusión, el prepass dibujaba superficies que luego no se sombreaban (cortes).
+VAR(zpass, 0, 0, 1);
 VAR(envpass, 0, 1, 1);
 
 struct renderstate
