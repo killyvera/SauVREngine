@@ -104,3 +104,22 @@ Promedios por frame, 182 segundos en ruebli, sin sombra real (`sm 0`), con blobs
 Conclusión: los cortes de lote vienen sobre todo de **variantes de luz dinámica**, no de la
 textura. Un atlas o array de texturas atacaría como mucho el 11 %. Antes de hacer atlas hay que
 probar `maxdynlights 0` (y luego agrupar las superficies por máscara de luz).
+
+## Corrección: los cortes NO vienen de la luz dinámica
+
+Prueba con `maxdynlights 0` (commit `fc5631a`, preset rendimiento, ruebli, solo y en red):
+
+| Config | Lotes | Draw calls | `shvar` |
+|---|---|---|---|
+| Antes (`maxdynlights 1`, sm 0) | 861 | 1046 | 762 |
+| Después (`maxdynlights 0`, sm 0) | 972 | 1201 | 859 |
+
+Los lotes no bajan: la luz dinámica no es la causa. Revisando `renderbatch` (`renderva.cpp`):
+cada grupo (vertex array × textura) empieza su propio lote y su cambio de shader. El campo
+`shvar` cuenta cuando el objeto de shader es el mismo que el lote anterior; no es una variante.
+
+Con 70 vertex arrays visibles y unos 972 lotes, hay ~14 lotes por array. Eso significa que la
+textura sí corta los lotes: cada array se parte en un lote por cada textura que contiene. Un
+array de texturas (o atlas) que junte las texturas del mismo tipo de shader dejaría ~1–2 lotes
+por array, es decir, del orden de 100–150 lotes en lugar de ~1000. Es una estimación, falta
+prototipo.
