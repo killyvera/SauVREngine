@@ -297,14 +297,21 @@ VAR(oqwait, 0, 0, 1);
 #define GL_ANY_SAMPLES_PASSED_CONSERVATIVE 0x8D6A
 #endif
 
+// Diagnóstico del congelamiento: errores de GL tras cada llamada de oclusión (0 inicio, 1 fin, 2 bbox, 3 resultado).
+int vroqerr[4] = { 0, 0, 0, 0 };
+static inline void oqcheck(int site) { GLenum e = glGetError(); if(e != GL_NO_ERROR) vroqerr[site]++; }
+
 void startquery(occludequery *query)
 {
+    oqcheck(0);
     glBeginQuery_(GL_ANY_SAMPLES_PASSED_CONSERVATIVE, query->id);
+    oqcheck(0);
 }
 
 void endquery(occludequery *query)
 {
     glEndQuery_(GL_ANY_SAMPLES_PASSED_CONSERVATIVE);
+    oqcheck(1);
 }
 
 bool checkquery(occludequery *query, bool nowait)
@@ -400,6 +407,7 @@ void drawbb(const ivec &bo, const ivec &br)
     LOCALPARAMF(bborigin, bo.x, bo.y, bo.z);
     LOCALPARAMF(bbsize, br.x, br.y, br.z);
     glDrawRangeElements_(GL_TRIANGLES, 0, 8-1, 3*2*6, GL_UNSIGNED_SHORT, (ushort *)0);
+    oqcheck(2);
     xtraverts += 8;
 }
 
