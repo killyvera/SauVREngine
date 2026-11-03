@@ -49,3 +49,17 @@
 
 Se conserva si baja `draw` y `lotes` en vistas densas sin perder geometría ni bots, y si
 `fps` y `p95` no empeoran. Si no baja `draw`, se apaga y se documenta.
+
+## Resultado de la prueba A/B (ruebli, preset rendimiento, con 8 bots)
+
+- Con oclusión encendida (`2f41d69`): la línea horizontal marcada aparece en las capturas.
+  Telemetría: `draw` 408, `lotes` 347, `fps` 63,9, `gpu` 10,2 ms.
+- Con oclusión apagada (`804c29f`, `oqfrags 0` por defecto): **la línea desaparece** (confirmado
+  en el visor). Telemetría: `draw` 1421, `lotes` 1204, `fps` 58,4, `gpu` 11,6 ms. Ojo: esta
+  sesión mezcla sombra real apagada y encendida (18 y 18 líneas), así que el fps no es
+  comparable directamente con la línea base.
+- Conclusión: la oclusión baja muchos draw calls (408 frente a 1421), pero el resultado en
+  pantalla es incorrecto: una parte del mundo se dibuja con otro estado de sombra. Hasta
+  corregirlo, se mantiene **apagada en Android**.
+- Los errores `GL_INVALID_OPERATION` (`gllast=502`) ya aparecían antes de este cambio
+  (línea base `4168f81`), así que no son de la consulta nueva.
