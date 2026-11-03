@@ -89,3 +89,18 @@ Usar `GL_TEXTURE_2D_ARRAY` (disponible en GLES 3.0+, el visor usa GLES 3.2):
 No se implementa todavía. Primero el prototipo de medición: si los lotes de mundo caen a la
 mitad o menos en ruebli, el cambio en el motor se justifica. Si caen poco, el problema está en
 los modelos (bots y objetos), y el atlas no es la solución.
+
+## Medición de lotes (build fbb15cb, ruebli, solo, rendimiento)
+
+Promedios por frame, 182 segundos en ruebli, sin sombra real (`sm 0`), con blobs:
+
+| Campo | Valor | Qué mide |
+|---|---|---|
+| `lotes` | 861 | lotes de mundo (cambios de shader por batch) |
+| `shdiff` | 91 (11 %) | cambio de shader distinto: tipo bump o estándar, ligado a la textura |
+| `shvar` | 762 (89 %) | variante del mismo shader: luz dinámica o sombra |
+| `slotsw` | 551 | cambios de textura; sin cambio de shader no generan lote nuevo |
+
+Conclusión: los cortes de lote vienen sobre todo de **variantes de luz dinámica**, no de la
+textura. Un atlas o array de texturas atacaría como mucho el 11 %. Antes de hacer atlas hay que
+probar `maxdynlights 0` (y luego agrupar las superficies por máscara de luz).
