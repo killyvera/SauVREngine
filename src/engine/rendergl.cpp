@@ -176,8 +176,7 @@ PFNGLISVERTEXARRAYPROC      glIsVertexArray_      = NULL;
 static void APIENTRY gldebugcallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam)
 {
     (void)source; (void)id; (void)length; (void)userParam;
-    fprintf(stderr, "GLDEBUG type=0x%x sev=0x%x: %s
-", type, severity, message);
+    fprintf(stderr, "GLDEBUG type=0x%x sev=0x%x: %s\n", type, severity, message);
 }
 typedef void (APIENTRYP PFNGLDEBUGMESSAGECALLBACK_T)(void *callback, const void *userParam);
 #endif
@@ -348,10 +347,8 @@ void gl_checkextensions()
     {
         PFNGLDEBUGMESSAGECALLBACK_T dbgcb = (PFNGLDEBUGMESSAGECALLBACK_T) getprocaddress("glDebugMessageCallback");
         if(!dbgcb) dbgcb = (PFNGLDEBUGMESSAGECALLBACK_T) getprocaddress("glDebugMessageCallbackKHR");
-        if(dbgcb) { glEnable(0x92E0); glEnable(0x8242); dbgcb((void *)gldebugcallback, NULL); fprintf(stderr, "GLDEBUG: callback activo
-"); }
-        else fprintf(stderr, "GLDEBUG: este visor no expone KHR_debug
-");
+        if(dbgcb) { glEnable(0x92E0); glEnable(0x8242); dbgcb((void *)gldebugcallback, NULL); fprintf(stderr, "GLDEBUG: callback activo\n"); }
+        else fprintf(stderr, "GLDEBUG: este visor no expone KHR_debug\n");
     }
 #endif
     glGenQueries_ =               (PFNGLGENQUERIESPROC)               getprocaddress("glGenQueries");
