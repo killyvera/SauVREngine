@@ -171,6 +171,17 @@ PFNGLDELETEVERTEXARRAYSPROC glDeleteVertexArrays_ = NULL;
 PFNGLGENVERTEXARRAYSPROC    glGenVertexArrays_    = NULL;
 PFNGLISVERTEXARRAYPROC      glIsVertexArray_      = NULL;
 
+#ifdef __ANDROID__
+// Diagnóstico (GL_KHR_debug): el driver avisa de cada llamada GL que falla, con la causa. Sale en logcat como GLDEBUG.
+static void APIENTRY gldebugcallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam)
+{
+    (void)source; (void)id; (void)length; (void)userParam;
+    fprintf(stderr, "GLDEBUG type=0x%x sev=0x%x: %s
+", type, severity, message);
+}
+typedef void (APIENTRYP PFNGLDEBUGMESSAGECALLBACK_T)(void *callback, const void *userParam);
+#endif
+
 void *getprocaddress(const char *name)
 {
     void *proc = SDL_GL_GetProcAddress(name);
@@ -333,6 +344,16 @@ void gl_checkextensions()
     glGetBufferSubData_ =         (PFNGLGETBUFFERSUBDATAPROC)         getprocaddress("glGetBufferSubData");
 
     glGetQueryiv_ =               (PFNGLGETQUERYIVPROC)               getprocaddress("glGetQueryiv");
+#ifdef __ANDROID__
+    {
+        PFNGLDEBUGMESSAGECALLBACK_T dbgcb = (PFNGLDEBUGMESSAGECALLBACK_T) getprocaddress("glDebugMessageCallback");
+        if(!dbgcb) dbgcb = (PFNGLDEBUGMESSAGECALLBACK_T) getprocaddress("glDebugMessageCallbackKHR");
+        if(dbgcb) { glEnable(0x92E0); glEnable(0x8242); dbgcb((void *)gldebugcallback, NULL); fprintf(stderr, "GLDEBUG: callback activo
+"); }
+        else fprintf(stderr, "GLDEBUG: este visor no expone KHR_debug
+");
+    }
+#endif
     glGenQueries_ =               (PFNGLGENQUERIESPROC)               getprocaddress("glGenQueries");
     glDeleteQueries_ =            (PFNGLDELETEQUERIESPROC)            getprocaddress("glDeleteQueries");
     glBeginQuery_ =               (PFNGLBEGINQUERYPROC)               getprocaddress("glBeginQuery");
