@@ -1540,6 +1540,8 @@ static void rendergeommultipass(renderstate &cur, int pass, bool fogpass)
 VAR(oqgeom, 0, 1, 1);
 // Diagnóstico de las líneas: con oqskip 0 las consultas se hacen pero ningún VA se salta.
 VAR(oqskip, 0, 0, 1);
+// Diagnóstico del parpadeo: con oqrecover 0 no se recuperan VAs ocultos en el pase de profundidad.
+VAR(oqrecover, 0, 0, 1);
 
 void rendergeom(float causticspass, bool fogpass)
 {
@@ -1647,7 +1649,7 @@ void rendergeom(float causticspass, bool fogpass)
         if(geombatches.length()) renderbatches(cur, RENDERPASS_LIGHTMAP);
         for(vtxarray *va = visibleva; va; va = va->next)
         {
-            if(!va->texs || va->occluded < OCCLUDE_GEOM) continue;
+            if(!oqrecover || !va->texs || va->occluded < OCCLUDE_GEOM) continue;
             else if((va->parent && va->parent->occluded >= OCCLUDE_BB) ||
                     (va->query && checkquery(va->query)))
             {
