@@ -1008,7 +1008,7 @@ void clearmapcrc() { mapcrc = 0; }
 // almacenamiento interno donde se extraen los assets), así que sobrevive al
 // reinicio y se regenera si el mapa cambia (crc distinto).
 VARP(vrautopvs, 0, 1, 1);
-VAR(vrpvscellsize, 8, 32, 128);
+VAR(vrpvscellsize, 8, 16, 128);
 
 static void pvsfilename(char *out)
 {
@@ -1022,9 +1022,15 @@ bool loadpvsfile()
 {
     string name; pvsfilename(name);
     stream *f = opengzfile(name, "rb");
+#ifdef __ANDROID__
+    { defformatstring(tl, "sauvr pvsfile name=%s open=%d mapcrc=%x", name, f ? 1 : 0, mapcrc); android_vr_telemetry(tl); }
+#endif
     if(!f) return false;
     int numpvs = f->getlil<int>();
     uint crc = f->getlil<uint>();
+#ifdef __ANDROID__
+    { defformatstring(tl, "sauvr pvsfile header numpvs=%d crc=%x mapcrc=%x", numpvs, crc, mapcrc); android_vr_telemetry(tl); }
+#endif
     if(numpvs <= 0 || crc != mapcrc) { delete f; conoutf("pvs %s descartado (mapa distinto)", name); return false; }
     clearpvs();
     loadpvs(f, numpvs);
@@ -1050,6 +1056,9 @@ bool savepvsfile()
 void autopvs()
 {
     if(loadpvsfile()) return;
+#ifdef __ANDROID__
+    { defformatstring(tl, "sauvr autopvs generate cell=%d", vrpvscellsize); android_vr_telemetry(tl); }
+#endif
     genpvsbackground(vrpvscellsize); // guarda el fichero al terminar (checkpvsbackground)
 }
 COMMANDN(genpvsfile, autopvs, "");

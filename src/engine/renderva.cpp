@@ -288,7 +288,8 @@ void clearqueries()
     loopi(MAXQUERYFRAMES) queryframes[i].cleanup();
 }
 
-VAR(oqfrags, 0, 8, 64); // oclusión encendida (diagnóstico de errores por llamada: oqerr)
+// Oclusión por consultas apagada en Android: provoca fallos de GPU en este driver (ver docs/oclusion-adreno.md).
+VAR(oqfrags, 0, 0, 64); // oclusión encendida (diagnóstico de errores por llamada: oqerr)
 // 0: nunca bloquear esperando un resultado de oclusión (con 1 el driver se detenía y la pantalla se congelaba).
 VAR(oqwait, 0, 0, 1);
 
@@ -301,8 +302,13 @@ VAR(oqwait, 0, 0, 1);
 int vroqerr[4] = { 0, 0, 0, 0 };
 static inline void oqcheck(int site) { GLenum e = glGetError(); if(e != GL_NO_ERROR) vroqerr[site]++; }
 
+// Diagnóstico de las líneas: con oqnoquery 1 no se emite ninguna consulta GL ni se toca el estado del bbox.
+// Todas las consultas cuentan como ocultas (igual que oqdraw 0), así que solo cambia lo que hace GL.
+VAR(oqnoquery, 0, 1, 1);
+
 void startquery(occludequery *query)
 {
+    if(oqnoquery) return;
     oqcheck(0);
     glBeginQuery_(GL_ANY_SAMPLES_PASSED_CONSERVATIVE, query->id);
     oqcheck(0);
@@ -310,12 +316,14 @@ void startquery(occludequery *query)
 
 void endquery(occludequery *query)
 {
+    if(oqnoquery) return;
     glEndQuery_(GL_ANY_SAMPLES_PASSED_CONSERVATIVE);
     oqcheck(1);
 }
 
 bool checkquery(occludequery *query, bool nowait)
 {
+    if(oqnoquery) return false; // sin consultas: todo visible, la oclusión solo viene de la PVS
     GLuint fragments;
     if(query->fragments >= 0) fragments = query->fragments;
     else
@@ -846,7 +854,8 @@ void renderdepthobstacles(const vec &bbmin, const vec &bbmax, float scale, float
 // Oclusión solo para lo lejano: lo cercano se dibuja siempre (evita cortes por resultados de un frame antes).
 VAR(oqdist, 0, 384, 1024);
 // Sin pase de profundidad previo: con oclusión, el prepass dibujaba superficies que luego no se sombreaban (cortes).
-VAR(zpass, 0, 1, 1);
+// Diagnóstico de las líneas: zpass 0 quitaba las líneas; se vuelve a 1 para probar el arreglo de atributos.
+VAR(zpass, 0, 0, 1);
 VAR(envpass, 0, 1, 1);
 
 struct renderstate
@@ -880,8 +889,10 @@ static inline void disablevbuf(renderstate &cur)
 
 static inline void enablevquery(renderstate &cur)
 {
-    if(cur.colormask) { cur.colormask = false; glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE); }
-    if(cur.depthmask) { cur.depthmask = false; glDepthMask(GL_FALSE); }
+    // Forzar siempre: otros caminos cambian glColorMask/glDepthMask sin actualizar cur,
+    // y si cur ya dice "apagado" el bbox de consulta podía pintar color (líneas).
+    cur.colormask = false; glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE);
+    cur.depthmask = false; glDepthMask(GL_FALSE);
     startbb(false);
     cur.vquery = true;
 }
@@ -892,14 +903,21 @@ static inline void disablevquery(renderstate &cur)
     cur.vquery = false;
 }
 
+// Diagnóstico de las líneas: con oqdraw 0 la consulta se abre y cierra sin dibujar la caja (0 muestras).
+VAR(oqdraw, 0, 1, 1);
+
 static void renderquery(renderstate &cur, occludequery *query, vtxarray *va, bool full = true)
 {
+    if(oqnoquery) return;
     if(!cur.vquery) enablevquery(cur);
 
     startquery(query);
 
-    if(full) drawbb(ivec(va->bbmin).sub(1), ivec(va->bbmax).sub(va->bbmin).add(2));
-    else drawbb(va->geommin, ivec(va->geommax).sub(va->geommin));
+    if(oqdraw)
+    {
+        if(full) drawbb(ivec(va->bbmin).sub(1), ivec(va->bbmax).sub(va->bbmin).add(2));
+        else drawbb(va->geommin, ivec(va->geommax).sub(va->geommin));
+    }
 
     endquery(query);
 }
@@ -1231,6 +1249,7 @@ static void changetexgen(renderstate &cur, int dim, Slot &slot, VSlot &vslot)
 
 static void renderbatch(renderstate &cur, int pass, geombatch &b)
 {
+    if(pass == RENDERPASS_LIGHTMAP) { extern void checkcamunif(const char *tag); checkcamunif("B"); }
     geombatch *shadowed = NULL;
     int rendered = -1;
     for(geombatch *curbatch = &b;; curbatch = &geombatches[curbatch->batch])
@@ -1318,8 +1337,21 @@ static void renderbatches(renderstate &cur, int pass)
     resetbatches();
 }
 
+// Diagnóstico de las líneas: con zprepass 0 no se dibuja el pase de profundidad (queda la profundidad vacía).
+VAR(zprepass, 0, 1, 1);
+// Diagnóstico: pinta el pase de profundidad en rojo (solo se ve donde el color no lo tapa).
+VAR(zpassdebug, 0, 1, 1);
+// Diagnóstico: aleja el pase de profundidad un poco. Si las líneas rojas desaparecen, el color estaba
+// rechazado por profundidad (mismatch); si siguen, el pase de color no dibuja esos triángulos.
+VAR(zpassoffset, 0, 0, 1);
+// Diagnóstico: con un prepass activo, el pase de color usa GL_EQUAL (patrón clásico de prepass).
+VAR(zpassequal, 0, 1, 1);
+// Diagnóstico: triángulos del pase de profundidad del último frame (comparar con vtris en telemetría).
+int vrztris = 0, vrmtris = 0, vrctris = 0;
+
 void renderzpass(renderstate &cur, vtxarray *va)
 {
+    if(!zprepass) return;
     if(!cur.vattribs)
     {   
         if(cur.vquery) disablevquery(cur);
@@ -1327,7 +1359,11 @@ void renderzpass(renderstate &cur, vtxarray *va)
     }
     if(cur.vbuf!=va->vbuf) changevbuf(cur, RENDERPASS_Z, va);
     if(!cur.depthmask) { cur.depthmask = true; glDepthMask(GL_TRUE); }
-    if(cur.colormask) { cur.colormask = false; glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE); }
+    if(zpassdebug)
+    {
+        if(!cur.colormask) { cur.colormask = true; glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE); }
+    }
+    else if(cur.colormask) { cur.colormask = false; glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE); }
     int firsttex = 0, numtris = va->tris;
     ushort *edata = va->edata;
     if(cur.alphaing)
@@ -1338,8 +1374,18 @@ void renderzpass(renderstate &cur, vtxarray *va)
         xtravertsva += 3*numtris;
     }
     else xtravertsva += va->verts;
-    nocolorshader->set();
+    if(zpassdebug)
+    {
+        static Shader *zdebugshader = NULL;
+        if(!zdebugshader) zdebugshader = lookupshaderbyname("zdebug");
+        zdebugshader->set();
+    }
+    else nocolorshader->set();
+    if(!cur.alphaing) vrztris += numtris;
+    { extern void checkcamunif(const char *tag); checkcamunif("Z"); }
+    if(zpassoffset) { glEnable(GL_POLYGON_OFFSET_FILL); glPolygonOffset(1, 1); }
     drawvatris(va, 3*numtris, edata);
+    if(zpassoffset) glDisable(GL_POLYGON_OFFSET_FILL);
 }
 
 vector<vtxarray *> foggedvas;
@@ -1539,7 +1585,7 @@ static void rendergeommultipass(renderstate &cur, int pass, bool fogpass)
 
 VAR(oqgeom, 0, 1, 1);
 // Diagnóstico de las líneas: con oqskip 0 las consultas se hacen pero ningún VA se salta.
-VAR(oqskip, 0, 0, 1);
+VAR(oqskip, 0, 1, 1);
 // Diagnóstico del parpadeo: con oqrecover 0 no se recuperan VAs ocultos en el pase de profundidad.
 VAR(oqrecover, 0, 0, 1);
 
@@ -1556,6 +1602,7 @@ void rendergeom(float causticspass, bool fogpass)
     {
         flipqueries();
         vtris = vverts = 0;
+        vrztris = vrmtris = 0;
         // Resultados viejos tras un salto grande de cámara (teletransporte): se descartan.
         static vec oqlastcam(-1e9f, -1e9f, -1e9f);
         if(oqlastcam.dist(camera1->o) > 512) for(vtxarray *va = visibleva; va; va = va->next) { va->query = NULL; va->occluded = OCCLUDE_NOTHING; }
@@ -1571,6 +1618,7 @@ void rendergeom(float causticspass, bool fogpass)
 
     resetbatches();
 
+    if(doZP) { extern void logcamproj(const char *tag); logcamproj("Z"); }
     int blends = 0;
     for(vtxarray *va = FIRSTVA; va; va = NEXTVA)
     {
@@ -1601,7 +1649,7 @@ void rendergeom(float causticspass, bool fogpass)
                 if(va->query) 
                 {
                     if(!zpass && geombatches.length()) renderbatches(cur, RENDERPASS_LIGHTMAP);
-                    if(cur.vattribs) disablevattribs(cur, !doZP);
+                    if(cur.vattribs) disablevattribs(cur);
                     if(cur.vbuf) disablevbuf(cur);
                     renderquery(cur, va->query, va);
                 }
@@ -1616,13 +1664,16 @@ void rendergeom(float causticspass, bool fogpass)
         }
 
         if(!doZP) blends += va->blends;
+        // El pase Z no debe escribir profundidad de VAs que el color salta (segundo bucle de rendergeom).
+        if(doZP && va->occluded >= OCCLUDE_GEOM) continue;
         renderva(cur, va, doZP ? RENDERPASS_Z : RENDERPASS_LIGHTMAP, fogpass, doOQ);
+        if(mainpass) vrmtris += va->blendtris + va->alphatris;
     }
 
     if(geombatches.length()) renderbatches(cur, RENDERPASS_LIGHTMAP);
 
     if(cur.vquery) disablevquery(cur);
-    if(cur.vattribs) disablevattribs(cur, !doZP);
+    if(cur.vattribs) disablevattribs(cur);
     if(cur.vbuf) disablevbuf(cur);
 
     if(!cur.colormask) { cur.colormask = true; glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE); }
@@ -1637,7 +1688,8 @@ void rendergeom(float causticspass, bool fogpass)
         setupgeom(cur);
         if(doSM) pushshadowmap();
 
-        if(!multipassing) { multipassing = true; glDepthFunc(GL_LEQUAL); }
+        if(doZP) { extern void logcamproj(const char *tag); logcamproj("C"); }
+        if(!multipassing) { multipassing = true; glDepthFunc(doZP && zpassequal ? GL_EQUAL : GL_LEQUAL); }
         cur.texgendim = -1;
 
         for(vtxarray *va = visibleva; va; va = va->next)
@@ -1729,6 +1781,7 @@ void rendergeom(float causticspass, bool fogpass)
 
     if(multipassing) glDepthFunc(GL_LESS);
 
+    if(mainpass) vrctris = vtris;
     cleanupgeom(cur);
 }
 

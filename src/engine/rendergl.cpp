@@ -75,6 +75,7 @@ PFNGLGETPROGRAMINFOLOGPROC        glGetProgramInfoLog_        = NULL;
 PFNGLGETSHADERINFOLOGPROC         glGetShaderInfoLog_         = NULL;
 PFNGLLINKPROGRAMPROC              glLinkProgram_              = NULL;
 PFNGLGETUNIFORMLOCATIONPROC       glGetUniformLocation_       = NULL;
+PFNGLGETUNIFORMFVPROC              glGetUniformfv_             = NULL;
 PFNGLUNIFORM1FPROC                glUniform1f_                = NULL;
 PFNGLUNIFORM2FPROC                glUniform2f_                = NULL;
 PFNGLUNIFORM3FPROC                glUniform3f_                = NULL;
@@ -372,6 +373,7 @@ void gl_checkextensions()
     glGetShaderInfoLog_ =         (PFNGLGETSHADERINFOLOGPROC)         getprocaddress("glGetShaderInfoLog");
     glLinkProgram_ =              (PFNGLLINKPROGRAMPROC)              getprocaddress("glLinkProgram");
     glGetUniformLocation_ =       (PFNGLGETUNIFORMLOCATIONPROC)       getprocaddress("glGetUniformLocation");
+    glGetUniformfv_ =             (PFNGLGETUNIFORMFVPROC)             getprocaddress("glGetUniformfv");
     glUniform1f_ =                (PFNGLUNIFORM1FPROC)                getprocaddress("glUniform1f");
     glUniform2f_ =                (PFNGLUNIFORM2FPROC)                getprocaddress("glUniform2f");
     glUniform3f_ =                (PFNGLUNIFORM3FPROC)                getprocaddress("glUniform3f");
@@ -1117,6 +1119,51 @@ void setcammatrix()
             worldpos = vec(aimdir).mul(2*worldsize).add(aimorigin); // if nothing is hit, just far away in the aim direction
     }
 }
+
+#ifdef __ANDROID__
+// Diagnóstico de las líneas: volcado del offset de profundidad de la matriz de cámara por pase (logcat CAMDUMP).
+void logcamproj(const char *tag)
+{
+    static int logs = 0;
+    if(logs >= 16) return;
+    logs++;
+    GLint depthbits = 0, samples = 0;
+    glGetIntegerv(GL_DEPTH_BITS, &depthbits);
+    glGetIntegerv(GL_SAMPLES, &samples);
+    GLfloat range[2] = { 0, 0 }; glGetFloatv(GL_DEPTH_RANGE, range);
+    GLint depthfunc = 0, depthmask = 0, polyfill = 0; glGetIntegerv(GL_DEPTH_FUNC, &depthfunc); glGetIntegerv(GL_DEPTH_WRITEMASK, &depthmask); polyfill = glIsEnabled(GL_POLYGON_OFFSET_FILL);
+    fprintf(stderr, "CAMDUMP %s state range=%f,%f func=%x mask=%d polyfill=%d\n", tag, range[0], range[1], depthfunc, depthmask, polyfill);
+    fprintf(stderr, "CAMDUMP %s depthbits=%d samples=%d projdz=%.7f eye0d=%.6f,%.6f,%.6f,%.6f eye1d=%.6f,%.6f,%.6f,%.6f\n",
+        tag, depthbits, samples, projmatrix.d.z,
+        eyecamprojmatrix[0].d.x, eyecamprojmatrix[0].d.y, eyecamprojmatrix[0].d.z, eyecamprojmatrix[0].d.w,
+        eyecamprojmatrix[1].d.x, eyecamprojmatrix[1].d.y, eyecamprojmatrix[1].d.z, eyecamprojmatrix[1].d.w);
+}
+
+// Diagnóstico: compara el uniform camprojmatrix del programa activo con la matriz del ojo 0 (logcat CAMUNIF).
+void checkcamunif(const char *tag)
+{
+    static int logs = 0;
+    if(logs >= 24) return;
+    GLint prog = 0;
+    glGetIntegerv(GL_CURRENT_PROGRAM, &prog);
+    if(!prog) return;
+    GLint loc = glGetUniformLocation_(prog, "camprojmatrix[0]");
+    if(loc < 0) loc = glGetUniformLocation_(prog, "camprojmatrix");
+    if(loc < 0) return;
+    logs++;
+    GLfloat m[16];
+    glGetUniformfv_(prog, loc, m);
+    const matrix4 &e = eyecamprojmatrix[0];
+    GLfloat ef[16] = { e.a.x, e.a.y, e.a.z, e.a.w, e.b.x, e.b.y, e.b.z, e.b.w, e.c.x, e.c.y, e.c.z, e.c.w, e.d.x, e.d.y, e.d.z, e.d.w };
+    float maxd = 0;
+    loopi(16) maxd = max(maxd, fabsf(m[i] - ef[i]));
+    fprintf(stderr, "CAMUNIF %s prog=%d maxdiff=%g uniform=%f,%f,%f,%f eye=%f,%f,%f,%f\n", tag, prog, maxd, m[12], m[13], m[14], m[15], ef[12], ef[13], ef[14], ef[15]);
+}
+
+#else
+void logcamproj(const char *) {}
+void checkcamunif(const char *) {}
+#endif
 
 void setcamprojmatrix(bool init = true, bool flush = false)
 {
@@ -3285,6 +3332,8 @@ void gl_drawhud()
                     concatstring(tl, tp);
                     memset(vrprofacc, 0, sizeof(vrprofacc)); vrprofframes = 0; vrshadowus = 0; vrsmcast[0] = 0; vrshflip = 0; vrsmerr = 0; vrshjump = 0; vrshrec = 0; vrslotsw = 0; vrswshader = 0; vrswvariant = 0; vrdrawn = 0; vrskipped = 0;
                     android_vr_telemetry(tl);
+                    extern int vrztris, vrmtris, vrctris;
+                    char zl[160]; formatstring(zl, "sauvr zpass ztris=%d vtris=%d mtris=%d", vrztris, vrctris, vrmtris); android_vr_telemetry(zl);
                     // Cada 10 s: ajustes de calidad y shaders que han fallado (raíz de "se ve apagado").
                     static int lastcfgline = 0;
                     if(totalmillis - lastcfgline >= 10000)

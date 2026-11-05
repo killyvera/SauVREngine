@@ -159,6 +159,9 @@ static void rewritemultiview(vector<char> &out, const char *src)
 }
 #endif
 
+// Diagnóstico de las líneas: volcado del vertex shader final (con la reescritura multiview) a logcat.
+static int shaderdumps = 0;
+
 static void compileglslshader(GLenum type, GLuint &obj, const char *def, const char *name, bool msg = true) 
 {
     const char *source = def + strspn(def, " \t\r\n");
@@ -170,6 +173,20 @@ static void compileglslshader(GLenum type, GLuint &obj, const char *def, const c
     const bool multiviewshader = vrmultiviewactive && !strstr(source, "//:singleview");
     if(multiviewshader) { rewritemultiview(mvsource, source); source = mvsource.getbuf(); }
 #endif
+    if(type == GL_VERTEX_SHADER && shaderdumps < 6 && (!strcmp(name, "nocolor") || !strcmp(name, "stdworld") || strstr(name, "world")))
+    {
+        shaderdumps++;
+        fprintf(stderr, "SHADERDUMP name=%s\n", name);
+        const char *line = source;
+        while(*line)
+        {
+            const char *end = strchr(line, '\n');
+            int len = end ? int(end - line) : int(strlen(line));
+            fprintf(stderr, "SHADERDUMP %.*s\n", len, line);
+            if(!end) break;
+            line = end + 1;
+        }
+    }
     const char *parts[16];
     int numparts = 0;
 #ifdef __ANDROID__
@@ -204,7 +221,8 @@ static void compileglslshader(GLenum type, GLuint &obj, const char *def, const c
     {
         if(type == GL_VERTEX_SHADER) parts[numparts++] =
             "#define attribute in\n"
-            "#define varying out\n";
+            "#define varying out\n"
+            "invariant gl_Position;\n"; // diagnóstico: misma posición en el pase Z y en el de color
         else if(type == GL_FRAGMENT_SHADER)
         {
             parts[numparts++] = "#define varying in\n";

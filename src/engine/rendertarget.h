@@ -377,7 +377,8 @@ struct rendertarget
 
         if(scissoring) glDisable(GL_SCISSOR_TEST);
 
-#ifdef __ANDROID__
+// Diagnóstico de las líneas: invalidate de profundidad desactivado para probar si causa el glitch (reactivar con #ifdef __ANDROID__).
+#if 0
         // Render por tiles (Adreno): la profundidad de esta pasada no se vuelve a leer, así que descartarla
         // evita escribirla a memoria al terminar. Solo se lee el color (rendertex) y el blur usa otro FBO.
         if(succeeded && glversion >= 300 && glInvalidateFramebuffer_)

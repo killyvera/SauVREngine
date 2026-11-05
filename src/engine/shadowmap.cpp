@@ -263,6 +263,10 @@ bool isshadowmapcaster(const vec &o, float rad)
     return true;
 }
 
+#ifndef __ANDROID__
+VAR(vrworldscale, 1, 8, 1000); // en escritorio no existe la parte de VR de rendergl.cpp
+#endif
+
 void pushshadowmap()
 {
     if(!shadowmap || !shadowmaptex.rendertex) return;

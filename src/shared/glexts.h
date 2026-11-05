@@ -223,6 +223,8 @@ extern PFNGLGETPROGRAMINFOLOGPROC        glGetProgramInfoLog_;
 extern PFNGLGETSHADERINFOLOGPROC         glGetShaderInfoLog_;
 extern PFNGLLINKPROGRAMPROC              glLinkProgram_;
 extern PFNGLGETUNIFORMLOCATIONPROC       glGetUniformLocation_;
+typedef void (APIENTRYP PFNGLGETUNIFORMFVPROC) (GLuint program, GLint location, GLfloat *params);
+extern PFNGLGETUNIFORMFVPROC              glGetUniformfv_;
 extern PFNGLUNIFORM1FPROC                glUniform1f_;
 extern PFNGLUNIFORM2FPROC                glUniform2f_;
 extern PFNGLUNIFORM3FPROC                glUniform3f_;

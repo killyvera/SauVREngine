@@ -1013,6 +1013,10 @@ static bool calcscissorbox(Reflection &ref, int size, const matrix4 &proj, vec &
 // Recorte del reflejo. Con multiview la textura de reflejo tiene una capa por ojo y
 // un único scissor para las dos: se usa la unión de las cajas de ambos ojos. Si
 // alguna caja no permite recorte, no se recorta. En envmaps/minimapa no se recorta.
+#ifndef __ANDROID__
+static void geteyecamprojs(matrix4 *out) { loopi(2) out[i] = camprojmatrix; }
+#endif
+
 static bool calcreflectscissor(Reflection &ref, int size, vec &clipmin, vec &clipmax, int &sx, int &sy, int &sw, int &sh)
 {
     if(!vrmultiviewactive) return calcscissorbox(ref, size, camprojmatrix, clipmin, clipmax, sx, sy, sw, sh);
