@@ -7,9 +7,12 @@
 // multiview), el oclusor solo cubre los píxeles que tapa enteros y con su profundidad más lejana
 // dentro del píxel, y una caja que cruza el plano cercano cuenta como visible.
 
-VARP(swocclude, 0, 1, 1);
-VARP(swoccludedist, 0, 128, 4096);
-VARP(swoccludebudget, 0, 4000, 100000);
+// Apagado: en ruebli no descarta casi nada (VAs grandes, el PVS ya quita lo oculto) y cuesta ~2,5 ms de CPU.
+// VAR y no VARP para que no se guarde en la config del visor; se llama distinto del antiguo VARP
+// swocclude para que un "swocclude 1" guardado no lo vuelva a encender.
+VAR(swoccludetest, 0, 0, 1);
+VAR(swoccludedist, 0, 128, 4096);
+VAR(swoccludebudget, 0, 4000, 100000);
 int swcull = 0, swus = 0;
 // Diagnóstico: 0 triangulos oclusores rasterizados, 1 zonas probadas, 2 no descartadas por cruzar el plano cercano, 3 no descartadas por profundidad, 4 triangulos oclusores de las zonas visibles.
 int swdiag[5] = { 0, 0, 0, 0, 0 };

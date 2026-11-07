@@ -1599,7 +1599,7 @@ void rendergeom(float causticspass, bool fogpass)
          doOQ = oqfrags && oqgeom && mainpass,
          doZP = doOQ && zpass,
          doSM = shadowmap && !drawtex && !glaring;
-    swactive = mainpass && swocclude;
+    swactive = mainpass && swoccludetest;
     if(swactive) swbuild();
     renderstate cur;
     if(mainpass)
