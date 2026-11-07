@@ -59,6 +59,18 @@ function wantDir(rel) { // carpeta entera (modelos)
     if (!fs.existsSync(path.join(assets, f.slice(7)))) wanted.add(f.slice(7));
   }
   if (!n && !fs.existsSync(path.join(assets, rel))) missing.add(rel + '/');
+  // Los modelos cargan texturas y cfg de las carpetas padre ("../skin_bush1.png" en
+  // models/vegetation, o skin.jpg de respaldo en models/tentus/chains): se traen los
+  // ficheros sueltos de cada carpeta padre por debajo de packages/models.
+  const parts = rel.replace(/\/+$/, '').split('/');
+  for (let k = parts.length - 1; k > 2; k--) {
+    const parent = ('assets/' + parts.slice(0, k).join('/') + '/').toLowerCase();
+    for (const f of inApk) {
+      const lf = f.toLowerCase();
+      if (!lf.startsWith(parent) || f.endsWith('/') || lf.slice(parent.length).includes('/')) continue;
+      if (!fs.existsSync(path.join(assets, f.slice(7)))) wanted.add(f.slice(7));
+    }
+  }
 }
 const stripCmds = (s) => s.replace(/^(<[^>]*>)+/, '');
 const pkg = (s) => { s = stripCmds(s).replace(/^"|"$/g, ''); return s.startsWith('packages/') ? s : 'packages/' + s; };
