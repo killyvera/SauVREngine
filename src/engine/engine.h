@@ -188,6 +188,7 @@ extern matrix4 cammatrix, projmatrix, camprojmatrix, invcammatrix, invcamprojmat
 extern bvec fogcolor;
 extern vec curfogcolor;
 extern int fog;
+extern int getfog();
 extern float curfogstart, curfogend;
 
 extern void gl_checkextensions();

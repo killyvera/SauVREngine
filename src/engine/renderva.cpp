@@ -165,7 +165,7 @@ void setvfcP(float z, const vec &bbmin, const vec &bbmax)
     vfcP[4] = plane(vec4(pw).add(pz)).normalize(); // near/far planes
     if(z >= 0) loopi(5) vfcP[i].reflectz(z);
 
-    vfcDfog = fog;
+    vfcDfog = getfog();
     calcvfcD();
 }
 
@@ -1893,13 +1893,53 @@ void findreflectedvas(vector<vtxarray *> &vas, int prevvfc = VFC_PART_VISIBLE)
     }
 }
 
+// Reflejo ligero del agua: la geometría reflejada se dibuja con un draw por VA y un shader sin texturas
+// (reflectlite). A 128-256 px y con la distorsión del agua las texturas casi no se ven, y así el reflejo
+// pasa de cientos de lotes por textura a uno por VA. Lo activan los presets de rendimiento y equilibrio.
+VARP(vrreflectlite, 0, 0, 1);
+
+static bool renderreflectlite()
+{
+    static Shader *liteshader = NULL;
+    if(!liteshader) liteshader = lookupshaderbyname("reflectlite");
+    if(!liteshader) return false;
+    liteshader->set();
+    LOCALPARAM(liteambient, ambientcolor.tocolor());
+    LOCALPARAM(liteskylight, skylightcolor.tocolor());
+    LOCALPARAM(litesun, sunlightcolor.tocolor());
+    LOCALPARAM(litesundir, sunlightdir);
+    gle::enablevertex();
+    gle::enablenormal();
+    GLuint vbuf = 0;
+    for(vtxarray *va = reflectedva; va; va = va->rnext)
+    {
+        if(!va->texs || !va->tris || va->geommax.z <= reflectz) continue;
+        if(va->vbuf != vbuf)
+        {
+            gle::bindvbo(va->vbuf);
+            gle::bindebo(va->ebuf);
+            const vertex *ptr = 0;
+            gle::vertexpointer(sizeof(vertex), ptr->pos.v);
+            gle::normalpointer(sizeof(vertex), ptr->norm.v, GL_BYTE);
+            vbuf = va->vbuf;
+        }
+        drawvatris(va, 3*va->tris, va->edata);
+        vtris += va->tris;
+    }
+    gle::disablenormal();
+    gle::disablevertex();
+    gle::clearvbo();
+    gle::clearebo();
+    return true;
+}
+
 void renderreflectedgeom(bool causticspass, bool fogpass)
 {
     if(reflecting)
     {
         reflectedva = NULL;
         findreflectedvas(varoot);
-        rendergeom(causticspass ? 1 : 0, fogpass);
+        if(!vrreflectlite || !renderreflectlite()) rendergeom(causticspass ? 1 : 0, fogpass);
     }
     else rendergeom(causticspass ? 1 : 0, fogpass);
 }                

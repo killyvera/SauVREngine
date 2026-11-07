@@ -1702,6 +1702,10 @@ void hudquad(float x, float y, float w, float h, float tx, float ty, float tw, f
 }
 
 VARR(fog, 16, 4000, 1000024);
+// Distancia máxima de niebla en el visor (la pone el preset): lo que queda más allá se dibuja
+// como niebla, sin texturas ni lotes. 0 = la del mapa.
+VARP(vrfogmax, 0, 0, 1000024);
+int getfog() { return vrfogmax ? min(fog, vrfogmax) : fog; }
 bvec fogcolor(0x80, 0x99, 0xB3);
 HVARFR(fogcolour, 0, 0x8099B3, 0xFFFFFF,
 {
@@ -1738,7 +1742,7 @@ static void blendfog(int fogmat, float blend, float logblend, float &start, floa
             const bvec &wcol = getwatercolor(fogmat);
             int wfog = getwaterfog(fogmat);
             fogc.madd(wcol.tocolor(), blend);
-            end += logblend*min(fog, max(wfog*4, 32));
+            end += logblend*min(getfog(), max(wfog*4, 32));
             break;
         }
 
@@ -1747,14 +1751,14 @@ static void blendfog(int fogmat, float blend, float logblend, float &start, floa
             const bvec &lcol = getlavacolor(fogmat);
             int lfog = getlavafog(fogmat);
             fogc.madd(lcol.tocolor(), blend);
-            end += logblend*min(fog, max(lfog*4, 32));
+            end += logblend*min(getfog(), max(lfog*4, 32));
             break;
         }
 
         default:
             fogc.madd(fogcolor.tocolor(), blend);
-            start += logblend*(fog+64)/8;
-            end += logblend*fog;
+            start += logblend*(getfog()+64)/8;
+            end += logblend*getfog();
             break;
     }
 }
@@ -1935,6 +1939,12 @@ void drawglare()
 }
 
 VARP(reflectmms, 0, 1, 1);
+// Modelos (bots, jugadores y objetos del mapa) en el reflejo del agua. A 128-256 px casi no se ven y
+// cuestan como dibujarlos otra vez: los presets de rendimiento y equilibrio los quitan.
+VARP(vrreflectmodels, 0, 1, 1);
+// Telemetría: microsegundos de reflejo en geometría y en modelos (se reinician con la línea sauvr).
+uint64_t vrreflgeomus = 0, vrreflmdlus = 0;
+static inline uint64_t vrusnow() { return SDL_GetPerformanceCounter() * 1000000 / SDL_GetPerformanceFrequency(); }
 VARR(refractsky, 0, 0, 1);
 
 matrix4 noreflectmatrix;
@@ -2002,7 +2012,9 @@ void drawreflection(float z, bool refract, int fogdepth, const bvec &col)
 
     setcamprojmatrix(false, true);
 
+    uint64_t tgeom = vrusnow();
     renderreflectedgeom(refracting<0 && z>=0 && caustics, fogging);
+    vrreflgeomus += vrusnow() - tgeom;
 
     if(reflecting || refracting>0 || (refracting<0 && refractsky) || z<0)
     {
@@ -2024,8 +2036,13 @@ void drawreflection(float z, bool refract, int fogdepth, const bvec &col)
 
     renderdecals();
 
-    if(reflectmms) renderreflectedmapmodels();
-    rendergame();
+    if(vrreflectmodels)
+    {
+        uint64_t tmdl = vrusnow();
+        if(reflectmms) renderreflectedmapmodels();
+        rendergame();
+        vrreflmdlus += vrusnow() - tmdl;
+    }
 
     if(refracting && z>=0 && !isthirdperson() && fabs(camera1->o.z-z) <= 0.5f*(player->eyeheight + player->aboveeye))
     {
@@ -3332,6 +3349,8 @@ void gl_drawhud()
                     concatstring(tl, tp);
                     memset(vrprofacc, 0, sizeof(vrprofacc)); vrprofframes = 0; vrshadowus = 0; vrsmcast[0] = 0; vrshflip = 0; vrsmerr = 0; vrshjump = 0; vrshrec = 0; vrslotsw = 0; vrswshader = 0; vrswvariant = 0; vrdrawn = 0; vrskipped = 0;
                     android_vr_telemetry(tl);
+                    char rl[128]; formatstring(rl, "sauvr refl geom=%.2f mdl=%.2f models=%d", vrreflgeomus/1000.0f/pf, vrreflmdlus/1000.0f/pf, vrreflectmodels); android_vr_telemetry(rl);
+                    vrreflgeomus = vrreflmdlus = 0;
                     extern int vrztris, vrmtris, vrctris, swcull, swus, swdiag[5];
                     char zl[256]; formatstring(zl, "sauvr zpass ztris=%d vtris=%d mtris=%d swcull=%d swus=%d swocc=%d swtest=%d swnear=%d swdepth=%d swvis=%d", vrztris, vrctris, vrmtris, swcull, swus, swdiag[0], swdiag[1], swdiag[2], swdiag[3], swdiag[4]); android_vr_telemetry(zl);
                     // Cada 10 s: ajustes de calidad y shaders que han fallado (raíz de "se ve apagado").
