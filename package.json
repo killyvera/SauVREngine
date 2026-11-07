@@ -14,6 +14,7 @@
     "server:build": "node tools/desktop/build.mjs --server",
     "server:lan": "node tools/desktop/server.mjs",
     "sim:lan": "node tools/desktop/sim.mjs",
-    "aihost:lan": "node tools/desktop/aihost.mjs"
+    "aihost:lan": "node tools/desktop/aihost.mjs",
+    "model:import": "node tools/blender/import-model.mjs"
   }
 }
