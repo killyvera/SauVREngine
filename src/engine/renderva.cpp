@@ -1589,6 +1589,10 @@ VAR(oqskip, 0, 1, 1);
 // Diagnóstico del parpadeo: con oqrecover 0 no se recuperan VAs ocultos en el pase de profundidad.
 VAR(oqrecover, 0, 0, 1);
 
+// Reflejo híbrido (vrreflectlite 2): rendergeom solo dibuja con texturas los VAs reflejados más cerca
+// que reflectlitefrom; los demás los dibuja renderreflectlite sin texturas.
+static int reflectlitefrom = INT_MAX;
+
 #include "swocclude.h"
 
 void rendergeom(float causticspass, bool fogpass)
@@ -1635,7 +1639,7 @@ void rendergeom(float causticspass, bool fogpass)
         }
         else if(reflecting)
         {
-            if(va->geommax.z <= reflectz) continue;
+            if(va->geommax.z <= reflectz || va->distance > reflectlitefrom) continue;
         }
         else if(doOQ && va->distance > oqdist && !insideva(va, camera1->o))
         {
@@ -1896,9 +1900,11 @@ void findreflectedvas(vector<vtxarray *> &vas, int prevvfc = VFC_PART_VISIBLE)
 // Reflejo ligero del agua: la geometría reflejada se dibuja con un draw por VA y un shader sin texturas
 // (reflectlite). A 128-256 px y con la distorsión del agua las texturas casi no se ven, y así el reflejo
 // pasa de cientos de lotes por textura a uno por VA. Lo activan los presets de rendimiento y equilibrio.
-VARP(vrreflectlite, 0, 0, 1);
+// 2 = híbrido (preset calidad): con texturas hasta vrreflectnear, ligero más allá.
+VARP(vrreflectlite, 0, 0, 2);
+VARP(vrreflectnear, 0, 256, 4096);
 
-static bool renderreflectlite()
+static bool renderreflectlite(int mindist = -1)
 {
     static Shader *liteshader = NULL;
     if(!liteshader) liteshader = lookupshaderbyname("reflectlite");
@@ -1913,7 +1919,7 @@ static bool renderreflectlite()
     GLuint vbuf = 0;
     for(vtxarray *va = reflectedva; va; va = va->rnext)
     {
-        if(!va->texs || !va->tris || va->geommax.z <= reflectz) continue;
+        if(!va->texs || !va->tris || va->geommax.z <= reflectz || va->distance <= mindist) continue;
         if(va->vbuf != vbuf)
         {
             gle::bindvbo(va->vbuf);
@@ -1939,7 +1945,14 @@ void renderreflectedgeom(bool causticspass, bool fogpass)
     {
         reflectedva = NULL;
         findreflectedvas(varoot);
-        if(!vrreflectlite || !renderreflectlite()) rendergeom(causticspass ? 1 : 0, fogpass);
+        if(vrreflectlite == 2)
+        {
+            reflectlitefrom = vrreflectnear;
+            rendergeom(causticspass ? 1 : 0, fogpass);
+            reflectlitefrom = INT_MAX;
+            renderreflectlite(vrreflectnear);
+        }
+        else if(!vrreflectlite || !renderreflectlite()) rendergeom(causticspass ? 1 : 0, fogpass);
     }
     else rendergeom(causticspass ? 1 : 0, fogpass);
 }                

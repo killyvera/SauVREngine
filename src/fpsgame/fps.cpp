@@ -2,6 +2,8 @@
 
 // SauVREngine: conexión del cliente (engine/client.cpp) para las estadísticas del jugador simulado
 extern ENetPeer *curpeer; extern ENetHost *clienthost; extern int getclockmillis();
+// Telemetría del tick por partes (definido en engine/main.cpp).
+extern uint64_t vrtickus[8];
 
 namespace game
 {
@@ -301,30 +303,34 @@ namespace game
         }
     }
 
+    // Telemetría: microsegundos de cada parte de updateworld (línea sauvr tick en rendergl.cpp).
+    // 0 nav (física y rutas), 1 armas, 2 otros jugadores, 3 IA, 4 movibles y ragdolls, 5 red, 6 jugador.
+    static inline uint64_t tickusnow() { return SDL_GetPerformanceCounter() * 1000000 / SDL_GetPerformanceFrequency(); }
+    #define TICKPART(n, code) do { uint64_t tp0_ = tickusnow(); code; vrtickus[n] += tickusnow() - tp0_; } while(0)
+
     void updateworld()        // main game update loop
     {
         if(!maptime) { maptime = lastmillis; maprealtime = totalmillis; return; }
         if(!curtime) { gets2c(); if(player1->clientnum>=0) c2sinfo(); return; }
 
-        physicsframe();
-        ai::navigate();
+        TICKPART(0, { physicsframe(); ai::navigate(); });
         if(player1->state != CS_DEAD && !intermission)
         {
             if(player1->quadmillis) entities::checkquad(curtime, player1);
         }
-        updateweapons(curtime);
-        otherplayers(curtime);
+        TICKPART(1, updateweapons(curtime));
+        TICKPART(2, otherplayers(curtime));
         updatesimplayer();
-        {
+        TICKPART(3, {
             int t0 = aihost ? getclockmillis() : 0;
             ai::update();
             if(aihost) { aihostms += getclockmillis() - t0; aihostframes++; }
-        }
+        });
         updateaihost();
-        moveragdolls();
-        gets2c();
-        updatemovables(curtime);
-        updatemonsters(curtime);
+        TICKPART(4, moveragdolls());
+        TICKPART(5, gets2c());
+        TICKPART(4, { updatemovables(curtime); updatemonsters(curtime); });
+        uint64_t tplayer = tickusnow();
         if(connected && !player1->ai) // con simplayer, ai::logic ya mueve a player1
         {
             if(player1->state == CS_DEAD)
@@ -350,7 +356,8 @@ namespace game
                 else if(cmode) cmode->checkitems(player1);
             }
         }
-        if(player1->clientnum>=0) c2sinfo();   // do this last, to reduce the effective frame lag
+        vrtickus[6] += tickusnow() - tplayer;
+        TICKPART(5, { if(player1->clientnum>=0) c2sinfo(); });   // do this last, to reduce the effective frame lag
     }
 
     float proximityscore(float x, float lower, float upper)

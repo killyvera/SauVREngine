@@ -19,7 +19,7 @@ namespace game
     VARP(ragdollmillis, 0, 10000, 300000);
     VARP(ragdollfade, 0, 1000, 300000);
 #endif
-    VARFP(playermodel, 0, 0, 4, changedplayermodel());
+    VARFP(playermodel, 0, 0, 5, changedplayermodel());
     VARP(forceplayermodels, 0, 0, 1);
     VARP(hidedead, 0, 0, 2);
 
@@ -57,14 +57,15 @@ namespace game
         }
     }
 
-    static const playermodelinfo playermodels[5] =
+    static const playermodelinfo playermodels[6] =
     {
         { "mrfixit", "mrfixit/blue", "mrfixit/red", "mrfixit/hudguns", NULL, "mrfixit/horns", { "mrfixit/armor/blue", "mrfixit/armor/green", "mrfixit/armor/yellow" }, "mrfixit", "mrfixit_blue", "mrfixit_red", true },
         { "snoutx10k", "snoutx10k/blue", "snoutx10k/red", "snoutx10k/hudguns", NULL, "snoutx10k/wings", { "snoutx10k/armor/blue", "snoutx10k/armor/green", "snoutx10k/armor/yellow" }, "snoutx10k", "snoutx10k_blue", "snoutx10k_red", true },
         //{ "ogro/green", "ogro/blue", "ogro/red", "mrfixit/hudguns", "ogro/vwep", NULL, { NULL, NULL, NULL }, "ogro", "ogro_blue", "ogro_red", false },
         { "ogro2", "ogro2/blue", "ogro2/red", "mrfixit/hudguns", NULL, "ogro2/quad", { "ogro2/armor/blue", "ogro2/armor/green", "ogro2/armor/yellow" }, "ogro", "ogro_blue", "ogro_red", true },
         { "inky", "inky/blue", "inky/red", "inky/hudguns", NULL, "inky/quad", { "inky/armor/blue", "inky/armor/green", "inky/armor/yellow" }, "inky", "inky_blue", "inky_red", true },
-        { "captaincannon", "captaincannon/blue", "captaincannon/red", "captaincannon/hudguns", NULL, "captaincannon/quad", { "captaincannon/armor/blue", "captaincannon/armor/green", "captaincannon/armor/yellow" }, "captaincannon", "captaincannon_blue", "captaincannon_red", true }
+        { "captaincannon", "captaincannon/blue", "captaincannon/red", "captaincannon/hudguns", NULL, "captaincannon/quad", { "captaincannon/armor/blue", "captaincannon/armor/green", "captaincannon/armor/yellow" }, "captaincannon", "captaincannon_blue", "captaincannon_red", true },
+        { "soldado", "soldado/blue", "soldado/red", "mrfixit/hudguns", NULL, "mrfixit/horns", { "mrfixit/armor/blue", "mrfixit/armor/green", "mrfixit/armor/yellow" }, "soldado", "soldado_blue", "soldado_red", true }
     };
 
     int chooserandomplayermodel(int seed)
@@ -322,6 +323,9 @@ namespace game
             if(teamskins || m_teammode) team = isteam(player1->team, d->team) ? 1 : 2;
             renderplayer(d, getplayermodelinfo(d), team, 1, mainpass);
 
+            // Etiquetas y barras de estado solo en el pase principal: en el reflejo el raycube por
+            // jugador se repetía sin dibujar nada que se vea.
+            if(!mainpass) continue;
             vec dir = vec(d->o).sub(camera1->o);
             float dist = dir.magnitude();
             dir.div(dist);

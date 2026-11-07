@@ -1097,6 +1097,9 @@ void swapbuffers(bool overlay)
     // -- there is no SDL window (see setupscreen()'s __ANDROID__ branch).
 }
 
+// Telemetría: µs de updateworld por partes (fpsgame/fps.cpp) y 7 = servidor local.
+uint64_t vrtickus[8] = { 0 };
+
 VARP(menufps, 0, 60, 1000);
 VARP(maxfps, 0, 200, 1000);
 
@@ -1152,7 +1155,7 @@ static void gametick()
 
     checksleep(lastmillis);
 
-    serverslice(false, 0);
+    { uint64_t ts0 = SDL_GetPerformanceCounter(); serverslice(false, 0); vrtickus[7] += (SDL_GetPerformanceCounter() - ts0) * 1000000 / SDL_GetPerformanceFrequency(); }
 
     if(frames) updatefpshistory(elapsedtime);
     frames++;

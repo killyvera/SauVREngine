@@ -180,6 +180,16 @@ static void APIENTRY gldebugcallback(GLenum source, GLenum type, GLuint id, GLen
     fprintf(stderr, "GLDEBUG type=0x%x sev=0x%x: %s\n", type, severity, message);
 }
 typedef void (APIENTRYP PFNGLDEBUGMESSAGECALLBACK_T)(void *callback, const void *userParam);
+// La salida síncrona hace que el driver valide y avise en cada llamada: solo para diagnóstico.
+static bool gldebugready = false;
+static void setgldebug();
+VARF(vrgldebug, 0, 0, 1, setgldebug());
+static void setgldebug()
+{
+    if(!gldebugready) return;
+    if(vrgldebug) { glEnable(0x92E0); glEnable(0x8242); } // GL_DEBUG_OUTPUT, GL_DEBUG_OUTPUT_SYNCHRONOUS
+    else { glDisable(0x8242); glDisable(0x92E0); }
+}
 #endif
 
 void *getprocaddress(const char *name)
@@ -352,7 +362,7 @@ void gl_checkextensions()
     {
         PFNGLDEBUGMESSAGECALLBACK_T dbgcb = (PFNGLDEBUGMESSAGECALLBACK_T) getprocaddress("glDebugMessageCallback");
         if(!dbgcb) dbgcb = (PFNGLDEBUGMESSAGECALLBACK_T) getprocaddress("glDebugMessageCallbackKHR");
-        if(dbgcb) { glEnable(0x92E0); glEnable(0x8242); dbgcb((void *)gldebugcallback, NULL); fprintf(stderr, "GLDEBUG: callback activo\n"); }
+        if(dbgcb) { dbgcb((void *)gldebugcallback, NULL); gldebugready = true; setgldebug(); fprintf(stderr, "GLDEBUG: callback listo (vrgldebug %d)\n", vrgldebug); }
         else fprintf(stderr, "GLDEBUG: este visor no expone KHR_debug\n");
     }
 #endif
@@ -3038,8 +3048,9 @@ static int vrcfgsent = 0; // la línea "sauvr cfg" ya salió al menos una vez en
 // mano se veía "flotando" en el reflejo).
 VARP(vrreflectavatar, 0, 0, 1);
 // Captura de pantalla del visor al PC por UDP (ver android_vr_capture en el glue):
-// /vrcapture ahora, o automática cada N segundos (0 = no).
-VARP(vrautocapture, 0, 30, 600);
+// /vrcapture ahora, o automática cada N segundos (0 = no). glReadPixels para la GPU en cada
+// captura (tirón periódico): apagada por defecto y en los presets; se enciende para diagnosticar.
+VARP(vrautocapture, 0, 0, 600);
 int vrcapturescale = 3;
 ICOMMAND(vrcapture, "i", (int *scale), { vrcapturescale = *scale >= 1 && *scale <= 8 ? *scale : 3; vrcapturepending = 1; });
 // Multiview (un pase para los dos ojos). Cambia al reiniciar: el glue lee
@@ -3355,6 +3366,7 @@ void gl_drawhud()
                     android_vr_telemetry(tl);
                     char rl[128]; formatstring(rl, "sauvr refl geom=%.2f mdl=%.2f models=%d", vrreflgeomus/1000.0f/pf, vrreflmdlus/1000.0f/pf, vrreflectmodels); android_vr_telemetry(rl);
                     vrreflgeomus = vrreflmdlus = 0;
+                    { extern uint64_t vrtickus[8]; char kl[256]; formatstring(kl, "sauvr tick nav=%.2f armas=%.2f otros=%.2f ia=%.2f mov=%.2f red=%.2f jugador=%.2f server=%.2f", vrtickus[0]/1000.0f/pf, vrtickus[1]/1000.0f/pf, vrtickus[2]/1000.0f/pf, vrtickus[3]/1000.0f/pf, vrtickus[4]/1000.0f/pf, vrtickus[5]/1000.0f/pf, vrtickus[6]/1000.0f/pf, vrtickus[7]/1000.0f/pf); android_vr_telemetry(kl); memset(vrtickus, 0, sizeof(vrtickus)); }
                     extern int vrztris, vrmtris, vrctris, swcull, swus, swdiag[5];
                     char zl[256]; formatstring(zl, "sauvr zpass ztris=%d vtris=%d mtris=%d swcull=%d swus=%d swocc=%d swtest=%d swnear=%d swdepth=%d swvis=%d", vrztris, vrctris, vrmtris, swcull, swus, swdiag[0], swdiag[1], swdiag[2], swdiag[3], swdiag[4]); android_vr_telemetry(zl);
                     // Cada 10 s: ajustes de calidad y shaders que han fallado (raíz de "se ve apagado").
