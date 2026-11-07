@@ -854,7 +854,7 @@ void renderdepthobstacles(const vec &bbmin, const vec &bbmax, float scale, float
 // Oclusión solo para lo lejano: lo cercano se dibuja siempre (evita cortes por resultados de un frame antes).
 VAR(oqdist, 0, 384, 1024);
 // Sin pase de profundidad previo: con oclusión, el prepass dibujaba superficies que luego no se sombreaban (cortes).
-// Diagnóstico de las líneas: zpass 0 quitaba las líneas; se vuelve a 1 para probar el arreglo de atributos.
+// En Adreno el pase Z deja líneas (profundidad distinta entre prepass y color) y no aporta: el LRZ ya descarta lo oculto. Ver docs/oclusion-adreno.md.
 VAR(zpass, 0, 0, 1);
 VAR(envpass, 0, 1, 1);
 
@@ -1340,12 +1340,12 @@ static void renderbatches(renderstate &cur, int pass)
 // Diagnóstico de las líneas: con zprepass 0 no se dibuja el pase de profundidad (queda la profundidad vacía).
 VAR(zprepass, 0, 1, 1);
 // Diagnóstico: pinta el pase de profundidad en rojo (solo se ve donde el color no lo tapa).
-VAR(zpassdebug, 0, 1, 1);
+VAR(zpassdebug, 0, 0, 1);
 // Diagnóstico: aleja el pase de profundidad un poco. Si las líneas rojas desaparecen, el color estaba
 // rechazado por profundidad (mismatch); si siguen, el pase de color no dibuja esos triángulos.
 VAR(zpassoffset, 0, 0, 1);
 // Diagnóstico: con un prepass activo, el pase de color usa GL_EQUAL (patrón clásico de prepass).
-VAR(zpassequal, 0, 1, 1);
+VAR(zpassequal, 0, 0, 1);
 // Diagnóstico: triángulos del pase de profundidad del último frame (comparar con vtris en telemetría).
 int vrztris = 0, vrmtris = 0, vrctris = 0;
 
@@ -1589,6 +1589,8 @@ VAR(oqskip, 0, 1, 1);
 // Diagnóstico del parpadeo: con oqrecover 0 no se recuperan VAs ocultos en el pase de profundidad.
 VAR(oqrecover, 0, 0, 1);
 
+#include "swocclude.h"
+
 void rendergeom(float causticspass, bool fogpass)
 {
     if(causticspass && (!causticscale || !causticmillis)) causticspass = 0;
@@ -1597,6 +1599,8 @@ void rendergeom(float causticspass, bool fogpass)
          doOQ = oqfrags && oqgeom && mainpass,
          doZP = doOQ && zpass,
          doSM = shadowmap && !drawtex && !glaring;
+    swactive = mainpass && swocclude;
+    if(swactive) swbuild();
     renderstate cur;
     if(mainpass)
     {
@@ -1623,6 +1627,7 @@ void rendergeom(float causticspass, bool fogpass)
     for(vtxarray *va = FIRSTVA; va; va = NEXTVA)
     {
         if(!va->texs) continue;
+        if(swactive && swisculled(va)) continue;
         if(refracting)
         {
             if((refracting < 0 ? va->geommin.z > reflectz : va->geommax.z <= reflectz) || va->occluded >= OCCLUDE_GEOM) continue;
@@ -1695,6 +1700,7 @@ void rendergeom(float causticspass, bool fogpass)
         for(vtxarray *va = visibleva; va; va = va->next)
         {
             if(!va->texs || va->occluded >= OCCLUDE_GEOM) continue;
+            if(swactive && swisculled(va)) continue;
             blends += va->blends;
             renderva(cur, va, RENDERPASS_LIGHTMAP, fogpass);
         }

@@ -132,6 +132,8 @@ struct vtxarray
     vector<vtxarray *> children;
     vtxarray *next, *rnext; // linked list of visible VOBs
     vertex *vdata;           // vertex data
+    vector<float> occ;       // oclusores de CPU: triangulos grandes opacos (x y z por vertice)
+    int swframe;             // frame en que el culling por software lo descartó (swocclude.h)
     ushort voffset;          // offset into vertex data
     ushort *edata, *skydata; // vertex indices
     GLuint vbuf, ebuf, skybuf; // VBOs

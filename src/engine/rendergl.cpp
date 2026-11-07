@@ -3332,8 +3332,8 @@ void gl_drawhud()
                     concatstring(tl, tp);
                     memset(vrprofacc, 0, sizeof(vrprofacc)); vrprofframes = 0; vrshadowus = 0; vrsmcast[0] = 0; vrshflip = 0; vrsmerr = 0; vrshjump = 0; vrshrec = 0; vrslotsw = 0; vrswshader = 0; vrswvariant = 0; vrdrawn = 0; vrskipped = 0;
                     android_vr_telemetry(tl);
-                    extern int vrztris, vrmtris, vrctris;
-                    char zl[160]; formatstring(zl, "sauvr zpass ztris=%d vtris=%d mtris=%d", vrztris, vrctris, vrmtris); android_vr_telemetry(zl);
+                    extern int vrztris, vrmtris, vrctris, swcull, swus, swdiag[5];
+                    char zl[256]; formatstring(zl, "sauvr zpass ztris=%d vtris=%d mtris=%d swcull=%d swus=%d swocc=%d swtest=%d swnear=%d swdepth=%d swvis=%d", vrztris, vrctris, vrmtris, swcull, swus, swdiag[0], swdiag[1], swdiag[2], swdiag[3], swdiag[4]); android_vr_telemetry(zl);
                     // Cada 10 s: ajustes de calidad y shaders que han fallado (raíz de "se ve apagado").
                     static int lastcfgline = 0;
                     if(totalmillis - lastcfgline >= 10000)

@@ -394,8 +394,31 @@ struct vacollect : verthash
         GENVERTS(vertex, buf, { *f = v; f->norm.flip(); f->tangent.flip(); });
     }
 
+    // Oclusores de CPU: triangulos opacos grandes (paredes y suelos) de la zona, x y z por vertice.
+    void addocc(vtxarray *va, sortval &t, const sortkey &k)
+    {
+        if(k.alpha || k.layer==LAYER_BLEND) return;
+        for(int i = 0; i + 2 < t.tris[0].length(); i += 3)
+        {
+            const vec &a = verts[t.tris[0][i]].pos, &b = verts[t.tris[0][i+1]].pos, &c = verts[t.tris[0][i+2]].pos;
+            float ex = max(a.x, max(b.x, c.x)) - min(a.x, min(b.x, c.x));
+            float ey = max(a.y, max(b.y, c.y)) - min(a.y, min(b.y, c.y));
+            float ez = max(a.z, max(b.z, c.z)) - min(a.z, min(b.z, c.z));
+            if(max(ex, max(ey, ez)) < 48.0f) continue;
+            loopj(3) { const vec &p = verts[t.tris[0][i+j]].pos; va->occ.add(p.x); va->occ.add(p.y); va->occ.add(p.z); }
+        }
+    }
+
     void setupdata(vtxarray *va)
     {
+        va->occ.setsize(0);
+        for(int hi = 0; hi < indices.size; hi++) for(void *ec = indices.chains[hi]; ec;)
+        {
+            sortkey &k = indices.enumkey(ec);
+            sortval &t = indices.enumdata(ec);
+            ec = indices.enumnext(ec);
+            addocc(va, t, k);
+        }
         va->verts = verts.length();
         va->tris = worldtris/3;
         va->vbuf = 0;
@@ -1214,6 +1237,7 @@ vtxarray *newva(const ivec &co, int size)
     va->skyclip = vc.skyclip < INT_MAX ? vc.skyclip : INT_MAX;
     va->curvfc = VFC_NOT_VISIBLE;
     va->occluded = OCCLUDE_NOTHING;
+    va->swframe = 0;
     va->query = NULL;
     va->bbmin = ivec(-1, -1, -1);
     va->bbmax = ivec(-1, -1, -1);

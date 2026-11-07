@@ -379,3 +379,21 @@ Lo que la telemetría dice y lo que no:
   apagadas, el rendimiento es bueno y estable (los draw calls bajan porque la PVS sí recorta la escena).
 - Pendiente: decidir si la oclusión por consultas se deja apagada en Android o se corrige su estado de GPU
   (`startbb`/`endbb` y los VBO/EBO de la caja).
+
+## Decisión (2026-11-05)
+
+- Android queda con PVS de 16, sin consultas (`oqnoquery 1`, `oqfrags 0`) y sin pase Z (`zpass 0`).
+  `zpassdebug` y `zpassequal` vuelven a 0. Con eso iba a ~72 fps y ~344 draws, sin fallos de GPU.
+- Las líneas del pase Z no se persiguen más: la profundidad del prepass no coincide con la del color en
+  casi ningún píxel (prueba `GL_EQUAL`) con shaders y matrices iguales, lo que apunta al driver. En Adreno el
+  LRZ ya hace el rechazo por profundidad, así que el prepass no aporta.
+- Si hace falta más recorte, el camino es el culling por software (`swocclude.h`). Arreglos de esta ronda:
+  - Prueba contra cada ojo (`geteyecamprojs`) y no contra la cámara central; un VA se descarta solo si queda
+    oculto en las dos vistas.
+  - Rasterizado conservador: el oclusor solo marca los píxeles que cubre enteros, con su profundidad más
+    lejana dentro del píxel.
+  - Los oclusores que cruzan el plano cercano se recortan en vez de descartarse.
+  - Marca por frame en el `vtxarray` (`swframe`) en vez de buscar en una lista.
+  - Telemetría `swus`: microsegundos de CPU del culling por software en el último frame.
+- Pendiente: probar en el visor (sin geometría que desaparezca en ningún ojo) y comparar `swcull`, `draw`,
+  `fps`, `p95` y `swus` con `swocclude 0` y 1.

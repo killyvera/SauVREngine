@@ -68,3 +68,7 @@ Thumbs.db
 # Build de escritorio sin make (tools/desktop/build.mjs)
 /src/build-win64/
 android/app/src/main/cpp/vr_glue/VrBuild.h
+
+# Volcados de logcat del visor (cientos de MB cada uno)
+/logcat_*.txt
+/crash-completo.txt
