@@ -65,7 +65,7 @@ namespace game
         { "ogro2", "ogro2/blue", "ogro2/red", "mrfixit/hudguns", NULL, "ogro2/quad", { "ogro2/armor/blue", "ogro2/armor/green", "ogro2/armor/yellow" }, "ogro", "ogro_blue", "ogro_red", true },
         { "inky", "inky/blue", "inky/red", "inky/hudguns", NULL, "inky/quad", { "inky/armor/blue", "inky/armor/green", "inky/armor/yellow" }, "inky", "inky_blue", "inky_red", true },
         { "captaincannon", "captaincannon/blue", "captaincannon/red", "captaincannon/hudguns", NULL, "captaincannon/quad", { "captaincannon/armor/blue", "captaincannon/armor/green", "captaincannon/armor/yellow" }, "captaincannon", "captaincannon_blue", "captaincannon_red", true },
-        { "soldado", "soldado/blue", "soldado/red", "mrfixit/hudguns", NULL, "mrfixit/horns", { "mrfixit/armor/blue", "mrfixit/armor/green", "mrfixit/armor/yellow" }, "soldado", "soldado_blue", "soldado_red", true }
+        { "soldado", "soldado/blue", "soldado/red", "mrfixit/hudguns", NULL, NULL, { NULL, NULL, NULL }, "soldado", "soldado_blue", "soldado_red", true }
     };
 
     int chooserandomplayermodel(int seed)
