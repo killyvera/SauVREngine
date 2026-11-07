@@ -206,6 +206,10 @@ VAR(ati_minmax_bug, 0, 0, 1);
 VAR(ati_cubemap_bug, 0, 0, 1);
 VAR(intel_vertexarray_bug, 0, 0, 1);
 VAR(intel_mapbufferrange_bug, 0, 0, 1);
+#ifdef __ANDROID__
+// Subida de la geometría inmediata (GUI, texto, HUD) con orphaning en vez de glBufferSubData (glemu.cpp).
+VAR(vrstreamorphan, 0, 1, 1);
+#endif
 VAR(mesa_swap_bug, 0, 0, 1);
 VAR(minimizetcusage, 1, 0, 0);
 VAR(useubo, 1, 0, 0);

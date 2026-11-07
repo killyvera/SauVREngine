@@ -2,6 +2,9 @@
 
 extern int glversion;
 extern int intel_mapbufferrange_bug;
+#ifdef __ANDROID__
+extern int vrstreamorphan;
+#endif
 
 namespace gle
 {
@@ -261,22 +264,38 @@ namespace gle
         {
             if(buf == attribdata)
             {
-                if(vbooffset + attribbuf.length() >= MAXVBOSIZE)
+#ifdef __ANDROID__
+                // Adreno: glBufferSubData sobre el anillo de 4 MB que la GPU aún lee hace que el driver
+                // espere o copie el buffer en cada llamada (hud de 7-14 ms con menú o marcador). Un
+                // glBufferData del tamaño justo da almacenamiento nuevo cada vez (orphaning): sin espera
+                // y sin la carrera del mapeo no sincronizado que dejaba glifos fantasma.
+                if(intel_mapbufferrange_bug && vrstreamorphan)
                 {
                     if(!vbo) glGenBuffers_(1, &vbo);
                     glBindBuffer_(GL_ARRAY_BUFFER, vbo);
-                    glBufferData_(GL_ARRAY_BUFFER, MAXVBOSIZE, NULL, GL_STREAM_DRAW);
+                    glBufferData_(GL_ARRAY_BUFFER, attribbuf.length(), attribbuf.getbuf(), GL_STREAM_DRAW);
                     vbooffset = 0;
                 }
-                else if(!lastvertexsize) glBindBuffer_(GL_ARRAY_BUFFER, vbo);
-                void *dst = intel_mapbufferrange_bug ? NULL :
-                    glMapBufferRange_(GL_ARRAY_BUFFER, vbooffset, attribbuf.length(), GL_MAP_WRITE_BIT|GL_MAP_INVALIDATE_RANGE_BIT|GL_MAP_UNSYNCHRONIZED_BIT);
-                if(dst)
+                else
+#endif
                 {
-                    memcpy(dst, attribbuf.getbuf(), attribbuf.length());
-                    glUnmapBuffer_(GL_ARRAY_BUFFER);
+                    if(vbooffset + attribbuf.length() >= MAXVBOSIZE)
+                    {
+                        if(!vbo) glGenBuffers_(1, &vbo);
+                        glBindBuffer_(GL_ARRAY_BUFFER, vbo);
+                        glBufferData_(GL_ARRAY_BUFFER, MAXVBOSIZE, NULL, GL_STREAM_DRAW);
+                        vbooffset = 0;
+                    }
+                    else if(!lastvertexsize) glBindBuffer_(GL_ARRAY_BUFFER, vbo);
+                    void *dst = intel_mapbufferrange_bug ? NULL :
+                        glMapBufferRange_(GL_ARRAY_BUFFER, vbooffset, attribbuf.length(), GL_MAP_WRITE_BIT|GL_MAP_INVALIDATE_RANGE_BIT|GL_MAP_UNSYNCHRONIZED_BIT);
+                    if(dst)
+                    {
+                        memcpy(dst, attribbuf.getbuf(), attribbuf.length());
+                        glUnmapBuffer_(GL_ARRAY_BUFFER);
+                    }
+                    else glBufferSubData_(GL_ARRAY_BUFFER, vbooffset, attribbuf.length(), attribbuf.getbuf());
                 }
-                else glBufferSubData_(GL_ARRAY_BUFFER, vbooffset, attribbuf.length(), attribbuf.getbuf());
             }
             else glUnmapBuffer_(GL_ARRAY_BUFFER);
             buf = (uchar *)0 + vbooffset;
