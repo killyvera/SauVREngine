@@ -1,0 +1,6072 @@
+{
+  "mapa": "ruebli",
+  "fuente_cfg": "android/app/src/main/assets/packages/base/ruebli.cfg",
+  "slots": [
+    {
+      "indice": 0,
+      "ruta": "textures/sky.png",
+      "estado": "escalada",
+      "archivo": "textures/textures/sky.png"
+    },
+    {
+      "indice": 1,
+      "ruta": "textures/default.png",
+      "estado": "escalada",
+      "archivo": "textures/textures/default.png"
+    },
+    {
+      "indice": 2,
+      "ruta": "aard/aardograss_1.jpg",
+      "estado": "escalada",
+      "archivo": "textures/aard/aardograss_1.jpg"
+    },
+    {
+      "indice": 3,
+      "ruta": "ik2k/ik_floor_brick128a.jpg",
+      "estado": "escalada",
+      "archivo": "textures/ik2k/ik_floor_brick128a.jpg"
+    },
+    {
+      "indice": 4,
+      "ruta": "ik2k/ik_floor_wood128b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 5,
+      "ruta": "ik2k/ik_ground_cobbles128.jpg",
+      "estado": "escalada",
+      "archivo": "textures/ik2k/ik_ground_cobbles128.jpg"
+    },
+    {
+      "indice": 6,
+      "ruta": "ik2k/ik_brick_3216d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 7,
+      "ruta": "ik2k/ik_brick_6464c.jpg",
+      "estado": "escalada",
+      "archivo": "textures/ik2k/ik_brick_6464c.jpg"
+    },
+    {
+      "indice": 8,
+      "ruta": "dg/floor_grass1.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/floor_grass1.jpg"
+    },
+    {
+      "indice": 9,
+      "ruta": "dg/floor_grass3&soil.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 10,
+      "ruta": "dg/floor_pavement_stone4_2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 11,
+      "ruta": "dg/floor_pavement_stone4_3.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/floor_pavement_stone4_3.jpg"
+    },
+    {
+      "indice": 12,
+      "ruta": "dg/floor_pavement_stone4_4moss.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 13,
+      "ruta": "dg/floor_pavement_stone5_2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 14,
+      "ruta": "dg/floor_pavement_stone_four2.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/floor_pavement_stone_four2.jpg"
+    },
+    {
+      "indice": 15,
+      "ruta": "dg/floor_pavingStone.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 16,
+      "ruta": "dg/floor_pavingStone_ceramic.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 17,
+      "ruta": "dg/floor_paving_littleStones3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 18,
+      "ruta": "dg/floor_paving_littleStones3_2.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/floor_paving_littleStones3_2.jpg"
+    },
+    {
+      "indice": 19,
+      "ruta": "dg/floor_paving_littleStones3_2.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/floor_paving_littleStones3_2.jpg"
+    },
+    {
+      "indice": 20,
+      "ruta": "dg/floor_soil&grave3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 21,
+      "ruta": "dg/floor_tile_ceramicBlue.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 22,
+      "ruta": "dg/mur049.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 23,
+      "ruta": "dg/mad065.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/mad065.jpg"
+    },
+    {
+      "indice": 24,
+      "ruta": "dg/mad065.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/mad065.jpg"
+    },
+    {
+      "indice": 25,
+      "ruta": "dg/mad063.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 26,
+      "ruta": "dg/mur060.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/mur060.jpg"
+    },
+    {
+      "indice": 27,
+      "ruta": "dg/mur073.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/mur073.jpg"
+    },
+    {
+      "indice": 28,
+      "ruta": "dg/mur078.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 29,
+      "ruta": "dg/mur067.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/mur067.jpg"
+    },
+    {
+      "indice": 30,
+      "ruta": "dg/mur142.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 31,
+      "ruta": "dg/muv158.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/muv158.jpg"
+    },
+    {
+      "indice": 32,
+      "ruta": "dg/muv185.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 33,
+      "ruta": "dg/muv204.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/muv204.jpg"
+    },
+    {
+      "indice": 34,
+      "ruta": "dg/sue011.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/sue011.jpg"
+    },
+    {
+      "indice": 35,
+      "ruta": "dg/sup075.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 36,
+      "ruta": "dg/sup079.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 37,
+      "ruta": "tech1soc/spring3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 38,
+      "ruta": "tech1soc/sqrlig02wb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 39,
+      "ruta": "tech1soc/sqrlig03bc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 40,
+      "ruta": "tech1soc/zdetlig01bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 41,
+      "ruta": "tech1soc/zdetlig02bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 42,
+      "ruta": "tech1soc/zdetlig04bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 43,
+      "ruta": "tech1soc/zdet_trim2a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 44,
+      "ruta": "tech1soc/zdet_trim5b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 45,
+      "ruta": "tech1soc/032-01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 46,
+      "ruta": "tech1soc/032-02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 47,
+      "ruta": "tech1soc/032-03d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 48,
+      "ruta": "tech1soc/032-10a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 49,
+      "ruta": "tech1soc/032-10b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 50,
+      "ruta": "tech1soc/032-12d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 51,
+      "ruta": "tech1soc/032-14b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 52,
+      "ruta": "tech1soc/032-15a.jpg",
+      "estado": "escalada",
+      "archivo": "textures/tech1soc/032-15a.jpg"
+    },
+    {
+      "indice": 53,
+      "ruta": "tech1soc/032-15b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 54,
+      "ruta": "tech1soc/032lig10bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 55,
+      "ruta": "tech1soc/032lig11bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 56,
+      "ruta": "tech1soc/032lig11rb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 57,
+      "ruta": "tech1soc/032lig12bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 58,
+      "ruta": "tech1soc/032lig12rb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 59,
+      "ruta": "tech1soc/032lig12ya.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 60,
+      "ruta": "tech1soc/032lig20yb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 61,
+      "ruta": "tech1soc/064-11b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 62,
+      "ruta": "tech1soc/064-12a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 63,
+      "ruta": "tech1soc/064-13b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 64,
+      "ruta": "tech1soc/064-15b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 65,
+      "ruta": "tech1soc/064-20a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 66,
+      "ruta": "tech1soc/064-20b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 67,
+      "ruta": "tech1soc/064-22b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 68,
+      "ruta": "tech1soc/064lig20bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 69,
+      "ruta": "tech1soc/064lig22bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 70,
+      "ruta": "tech1soc/064lig22rb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 71,
+      "ruta": "tech1soc/064lig22wb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 72,
+      "ruta": "tech1soc/128-05b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 73,
+      "ruta": "tech1soc/128-05c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 74,
+      "ruta": "tech1soc/blank01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 75,
+      "ruta": "tech1soc/blank01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 76,
+      "ruta": "tech1soc/blank02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 77,
+      "ruta": "tech1soc/blank02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 78,
+      "ruta": "tech1soc/blank03a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 79,
+      "ruta": "tech1soc/blank03d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 80,
+      "ruta": "tech1soc/block01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 81,
+      "ruta": "tech1soc/block01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 82,
+      "ruta": "tech1soc/block10b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 83,
+      "ruta": "tech1soc/block19b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 84,
+      "ruta": "tech1soc/chain_mesh2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 85,
+      "ruta": "tech1soc/grate1b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 86,
+      "ruta": "tech1soc/grate_brown1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 87,
+      "ruta": "tech1soc/grate_brown3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 88,
+      "ruta": "tech1soc/grill_wall01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 89,
+      "ruta": "tech1soc/half_grill_wall01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 90,
+      "ruta": "tech1soc/half_grill_wall03b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 91,
+      "ruta": "tech1soc/mat4b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 92,
+      "ruta": "tech1soc/matbrown_lgt2.jpg",
+      "estado": "escalada",
+      "archivo": "textures/tech1soc/matbrown_lgt2.jpg"
+    },
+    {
+      "indice": 93,
+      "ruta": "tech1soc/met_wall01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 94,
+      "ruta": "tech1soc/met_wall01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 95,
+      "ruta": "tech1soc/mix_wall03a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 96,
+      "ruta": "tech1soc/mix_wall03ab.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 97,
+      "ruta": "tech1soc/o128-02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 98,
+      "ruta": "tech1soc/octlig01bc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 99,
+      "ruta": "tech1soc/panel20c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 100,
+      "ruta": "tech1soc/panel40c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 101,
+      "ruta": "tech1soc/s064-02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 102,
+      "ruta": "tech1soc/s064-02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 103,
+      "ruta": "tech1soc/s064-02c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 104,
+      "ruta": "tech1soc/s064-03a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 105,
+      "ruta": "tech1soc/s064-03b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 106,
+      "ruta": "tech1soc/s064-03c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 107,
+      "ruta": "tech1soc/s128-01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 108,
+      "ruta": "tech1soc/s128-02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 109,
+      "ruta": "tech1soc/s128-02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 110,
+      "ruta": "tech1soc/s128-03b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 111,
+      "ruta": "tech1soc/s128-06b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 112,
+      "ruta": "tech1soc/s128-07e.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 113,
+      "ruta": "tech1soc/s256-01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 114,
+      "ruta": "tech1soc/s256-01d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 115,
+      "ruta": "tech1soc/s256-02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 116,
+      "ruta": "tech1soc/s256-02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 117,
+      "ruta": "tech1soc/spring1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 118,
+      "ruta": "tech1soc/spring2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 119,
+      "ruta": "ik2k/ik_brickwall_gry.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 120,
+      "ruta": "ik2k/ik_brick_6432a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 121,
+      "ruta": "ik2k/ik_brick_6464a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 122,
+      "ruta": "ik2k/ik_brick_12832a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 123,
+      "ruta": "ik2k/ik_brick_12864a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 124,
+      "ruta": "ik2k/ik_brick_trimh32a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 125,
+      "ruta": "ik2k/ik_cliff256.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 126,
+      "ruta": "ik2k/ik_floor_brick128b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 127,
+      "ruta": "ik2k/ik_floor_tile128b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 128,
+      "ruta": "ik2k/ik_floor_wood128d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 129,
+      "ruta": "ik2k/ik_ground_deadgrass128.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 130,
+      "ruta": "ik2k/ik_ground_grass128.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 131,
+      "ruta": "ik2k/ik_ground_lawn128.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 132,
+      "ruta": "ik2k/ik_ground_pavement128.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 133,
+      "ruta": "ik2k/ik_ground_pebbles128.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 134,
+      "ruta": "ik2k/ik_stonestep25632.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 135,
+      "ruta": "ik2k/ik_tree128moss.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 136,
+      "ruta": "ik2k/ik_woodv256a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 137,
+      "ruta": "ik2k/ik_woodwall128128b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 138,
+      "ruta": "ik2k/ik_wood_planks128b.jpg",
+      "estado": "escalada",
+      "archivo": "textures/ik2k/ik_wood_planks128b.jpg"
+    },
+    {
+      "indice": 139,
+      "ruta": "ik2k/ik_wood_planks128d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 140,
+      "ruta": "ik2k/ik_wood_trimh64d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 141,
+      "ruta": "ik2k/ik_wood_trimh64e.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 142,
+      "ruta": "ik2k/ik_wpaperplain128a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 143,
+      "ruta": "ik2k/ik_wpaperplain128b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 144,
+      "ruta": "ik2k/ik_wpaperplain128c.jpg",
+      "estado": "escalada",
+      "archivo": "textures/ik2k/ik_wpaperplain128c.jpg"
+    },
+    {
+      "indice": 145,
+      "ruta": "ik2k/ik_wpaperplain128d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 146,
+      "ruta": "ik2k/ik_wpaperplain128e.jpg",
+      "estado": "escalada",
+      "archivo": "textures/ik2k/ik_wpaperplain128e.jpg"
+    },
+    {
+      "indice": 147,
+      "ruta": "ikbase/ik_conc_gmoss.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 148,
+      "ruta": "ikbase/ik_cwall03a2.jpg",
+      "estado": "escalada",
+      "archivo": "textures/ikbase/ik_cwall03a2.jpg"
+    },
+    {
+      "indice": 149,
+      "ruta": "ikbase/ik_cwall04a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 150,
+      "ruta": "ikbase/ik_cwall06a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 151,
+      "ruta": "ikbase/ik_floor_conc128a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 152,
+      "ruta": "ikbase/ik_floor_conc128b.jpg",
+      "estado": "escalada",
+      "archivo": "textures/ikbase/ik_floor_conc128b.jpg"
+    },
+    {
+      "indice": 153,
+      "ruta": "ikbase/ik_floor_met1f.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 154,
+      "ruta": "ikbase/ik_floor_met64d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 155,
+      "ruta": "ikbase/ik_floor_met64e.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 156,
+      "ruta": "ikbase/ik_floor_met64f.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 157,
+      "ruta": "ikbase/ik_floor_met128e.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 158,
+      "ruta": "ikbase/ik_floor_met128f.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 159,
+      "ruta": "ikbase/ik_gtrimh_64b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 160,
+      "ruta": "ikbase/ik_gtrimh_lit1a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 161,
+      "ruta": "ikbase/ik_gtrimv_64b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 162,
+      "ruta": "ikbase/ik_gtrimv_lit1a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 163,
+      "ruta": "ikbase/ik_gtrimv_lit2b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 164,
+      "ruta": "ikbase/ik_gtrimv_lit3b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 165,
+      "ruta": "ikbase/ik_gtrimv_lit4b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 166,
+      "ruta": "ikbase/ik_htrimh_64b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 167,
+      "ruta": "ikbase/ik_htrimh_64c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 168,
+      "ruta": "ikbase/ik_htrimh_64d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 169,
+      "ruta": "ikbase/ik_htrimv_64b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 170,
+      "ruta": "ikbase/ik_htrimv_64c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 171,
+      "ruta": "ikbase/ik_itrimv_128b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 172,
+      "ruta": "ikbase/ik_metplatef_6464b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 173,
+      "ruta": "ikbase/ik_wtrimh_32a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 174,
+      "ruta": "ikbase/ik_wtrimh_32b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 175,
+      "ruta": "ikbase/ik_wtrimh_32c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 176,
+      "ruta": "ikbase/ik_wtrimh_32d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 177,
+      "ruta": "ikbase/ik_wtrimh_64a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 178,
+      "ruta": "ikbase/ik_wtrimh_64c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 179,
+      "ruta": "ikbase/ik_wtrimh_64d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 180,
+      "ruta": "ikbase/ik_wtrimv_32a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 181,
+      "ruta": "ikbase/ik_wtrimv_32b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 182,
+      "ruta": "ikbase/ik_wtrimv_32c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 183,
+      "ruta": "ikbase/ik_wtrimv_32d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 184,
+      "ruta": "ikbase/ik_wtrimv_64a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 185,
+      "ruta": "ikbase/ik_wtrimv_64c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 186,
+      "ruta": "ikbase/ik_wtrimv_64d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 187,
+      "ruta": "payne/Box12b.jpg",
+      "estado": "escalada",
+      "archivo": "textures/payne/Box12b.jpg"
+    },
+    {
+      "indice": 188,
+      "ruta": "payne/Brick52a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 189,
+      "ruta": "payne/Brick58_512x512.jpg",
+      "estado": "original",
+      "archivo": "payne/Brick58_512x512.jpg"
+    },
+    {
+      "indice": 190,
+      "ruta": "payne/Grate09b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 191,
+      "ruta": "payne/SlimyTile02_128x128.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 192,
+      "ruta": "payne/Tile28b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 193,
+      "ruta": "payne/Tile41a.jpg",
+      "estado": "escalada",
+      "archivo": "textures/payne/Tile41a.jpg"
+    },
+    {
+      "indice": 194,
+      "ruta": "than_ind/floor02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 195,
+      "ruta": "than_ind/floor05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 196,
+      "ruta": "than_ind/floor06.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 197,
+      "ruta": "than_ind/light03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 198,
+      "ruta": "than_ind/trim04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 199,
+      "ruta": "than_ind/trim21.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 200,
+      "ruta": "than_ind/trlight01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 201,
+      "ruta": "than_ind/trlight06.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 202,
+      "ruta": "jf1/jf32.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 203,
+      "ruta": "jf1/jf64.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 204,
+      "ruta": "jf1/jf128.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 205,
+      "ruta": "jf1/jfbutn.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 206,
+      "ruta": "jf1/jfflr.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 207,
+      "ruta": "jf1/jfgrid.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 208,
+      "ruta": "jf1/jfhatch.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 209,
+      "ruta": "jf1/jflite.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 210,
+      "ruta": "jf1/jflitestr.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 211,
+      "ruta": "jf1/jfrock.jpg",
+      "estado": "escalada",
+      "archivo": "textures/jf1/jfrock.jpg"
+    },
+    {
+      "indice": 212,
+      "ruta": "jf1/jfrust.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 213,
+      "ruta": "jf1/jfstripe.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 214,
+      "ruta": "jf1/jfwall.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 215,
+      "ruta": "aard/aardfdry256_1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 216,
+      "ruta": "tech1soc/spring3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 217,
+      "ruta": "tech1soc/sqrlig02wb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 218,
+      "ruta": "tech1soc/sqrlig03bc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 219,
+      "ruta": "tech1soc/zdetlig01bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 220,
+      "ruta": "tech1soc/zdetlig02bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 221,
+      "ruta": "aard/aardmbr16_2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 222,
+      "ruta": "tech1soc/zdetlig04bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 223,
+      "ruta": "tech1soc/zdet_trim2a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 224,
+      "ruta": "aard/aardmmet32_1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 225,
+      "ruta": "tech1soc/zdet_trim5b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 226,
+      "ruta": "schwenz/dt_tile_check.01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 227,
+      "ruta": "egyptsoc/032-01a.jpg",
+      "estado": "escalada",
+      "archivo": "textures/egyptsoc/032-01a.jpg"
+    },
+    {
+      "indice": 228,
+      "ruta": "egyptsoc/032-03a.jpg",
+      "estado": "escalada",
+      "archivo": "textures/egyptsoc/032-03a.jpg"
+    },
+    {
+      "indice": 229,
+      "ruta": "egyptsoc/032-04a.jpg",
+      "estado": "escalada",
+      "archivo": "textures/egyptsoc/032-04a.jpg"
+    },
+    {
+      "indice": 230,
+      "ruta": "egyptsoc/032-05d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 231,
+      "ruta": "egyptsoc/064-07d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 232,
+      "ruta": "egyptsoc/064-08f.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 233,
+      "ruta": "egyptsoc/128-01pc.jpg",
+      "estado": "escalada",
+      "archivo": "textures/egyptsoc/128-01pc.jpg"
+    },
+    {
+      "indice": 234,
+      "ruta": "egyptsoc/128-03c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 235,
+      "ruta": "egyptsoc/128-04a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 236,
+      "ruta": "egyptsoc/128-04d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 237,
+      "ruta": "egyptsoc/256-03b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 238,
+      "ruta": "egyptsoc/block01a.jpg",
+      "estado": "escalada",
+      "archivo": "textures/egyptsoc/block01a.jpg"
+    },
+    {
+      "indice": 239,
+      "ruta": "egyptsoc/block01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 240,
+      "ruta": "egyptsoc/block01d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 241,
+      "ruta": "egyptsoc/block07b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 242,
+      "ruta": "egyptsoc/block10c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 243,
+      "ruta": "egyptsoc/lig_032-01b1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 244,
+      "ruta": "egyptsoc/lig_032-01r1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 245,
+      "ruta": "egyptsoc/lig_032-03b1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 246,
+      "ruta": "egyptsoc/lig_032-03r1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 247,
+      "ruta": "egyptsoc/lig_032-04b1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 248,
+      "ruta": "egyptsoc/lig_032-04r1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 249,
+      "ruta": "egyptsoc/lig_064-01b1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 250,
+      "ruta": "egyptsoc/lig_064-02r1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 251,
+      "ruta": "egyptsoc/lig_064-04b1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 252,
+      "ruta": "egyptsoc/lig_064-04r1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 253,
+      "ruta": "egyptsoc/lig_064-04y1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 254,
+      "ruta": "egyptsoc/lig_b064-02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 255,
+      "ruta": "egyptsoc/lig_b064-02d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 256,
+      "ruta": "egyptsoc/s064-01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 257,
+      "ruta": "egyptsoc/s064-01e.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 258,
+      "ruta": "egyptsoc/s064-03a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 259,
+      "ruta": "egyptsoc/s064-05f.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 260,
+      "ruta": "egyptsoc/solidgrate1b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 261,
+      "ruta": "egyptsoc/stone01a.jpg",
+      "estado": "escalada",
+      "archivo": "textures/egyptsoc/stone01a.jpg"
+    },
+    {
+      "indice": 262,
+      "ruta": "egyptsoc/stone01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 263,
+      "ruta": "egyptsoc/stone03b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 264,
+      "ruta": "egyptsoc/stone04b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 265,
+      "ruta": "egyptsoc/stone10b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 266,
+      "ruta": "egyptsoc/v064-02a.jpg",
+      "estado": "escalada",
+      "archivo": "textures/egyptsoc/v064-02a.jpg"
+    },
+    {
+      "indice": 267,
+      "ruta": "egyptsoc/v064-03b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 268,
+      "ruta": "egyptsoc/wood17.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 269,
+      "ruta": "egyptsoc/woodmgrid1a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 270,
+      "ruta": "egyptsoc/032-03c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 271,
+      "ruta": "egyptsoc/048-01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 272,
+      "ruta": "egyptsoc/048-02h.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 273,
+      "ruta": "egyptsoc/064-02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 274,
+      "ruta": "egyptsoc/064-03a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 275,
+      "ruta": "egyptsoc/064-08c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 276,
+      "ruta": "egyptsoc/128-02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 277,
+      "ruta": "egyptsoc/256-01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 278,
+      "ruta": "egyptsoc/block02b.jpg",
+      "estado": "escalada",
+      "archivo": "textures/egyptsoc/block02b.jpg"
+    },
+    {
+      "indice": 279,
+      "ruta": "egyptsoc/block03b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 280,
+      "ruta": "egyptsoc/lig_128-05b1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 281,
+      "ruta": "egyptsoc/s064-05c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 282,
+      "ruta": "egyptsoc/stone01d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 283,
+      "ruta": "egyptsoc/stone02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 284,
+      "ruta": "egyptsoc/stone03d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 285,
+      "ruta": "egyptsoc/stone04d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 286,
+      "ruta": "egyptsoc/stone08d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 287,
+      "ruta": "egyptsoc/stone10d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 288,
+      "ruta": "egyptsoc/v064-01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 289,
+      "ruta": "egyptsoc/v064-03c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 290,
+      "ruta": "egyptsoc/v096-01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 291,
+      "ruta": "egyptsoc/v128-02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 292,
+      "ruta": "egyptsoc/v128-03a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 293,
+      "ruta": "rorschach/128_ivbr_trim02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 294,
+      "ruta": "rorschach/128_tar_metflr01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 295,
+      "ruta": "rorschach/1r_clocktrim01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 296,
+      "ruta": "rorschach/1r_clocktrim03b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 297,
+      "ruta": "rorschach/1r_column01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 298,
+      "ruta": "rorschach/1r_floor02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 299,
+      "ruta": "rorschach/1r_grill02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 300,
+      "ruta": "rorschach/1r_light01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 301,
+      "ruta": "rorschach/1r_metbrick01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 302,
+      "ruta": "rorschach/1r_metpan05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 303,
+      "ruta": "rorschach/1r_metrim1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 304,
+      "ruta": "rorschach/1r_metwl01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 305,
+      "ruta": "rorschach/1r_plain_met02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 306,
+      "ruta": "rorschach/1r_squ_pan03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 307,
+      "ruta": "rorschach/1r_squ_pan04b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 308,
+      "ruta": "rorschach/1r_steps.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 309,
+      "ruta": "rorschach/1r_thickpan03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 310,
+      "ruta": "rorschach/1_concrete01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 311,
+      "ruta": "rorschach/1_rust_grill01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 312,
+      "ruta": "rorschach/1_rust_grill02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 313,
+      "ruta": "rorschach/1_rust_grill02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 314,
+      "ruta": "rorschach/1_slimey01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 315,
+      "ruta": "rorschach/1_th_trim01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 316,
+      "ruta": "rorschach/1_th_trim02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 317,
+      "ruta": "rorschach/256_gate_rock07.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 318,
+      "ruta": "rorschach/256_gate_water02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 319,
+      "ruta": "rorschach/256_iv_floor01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 320,
+      "ruta": "rorschach/256_iv_floor02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 321,
+      "ruta": "rorschach/256_tar_ccolumn01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 322,
+      "ruta": "rorschach/2r_plaster_floor01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 323,
+      "ruta": "rorschach/2_064_red_girder02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 324,
+      "ruta": "rorschach/2_128_redpan02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 325,
+      "ruta": "rorschach/2_256_redsup01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 326,
+      "ruta": "rorschach/2_256_red_thin02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 327,
+      "ruta": "rorschach/2_256_red_thin03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 328,
+      "ruta": "rorschach/2_32_red_thin02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 329,
+      "ruta": "rorschach/2_conc_celing01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 330,
+      "ruta": "rorschach/2_conc_floorpat02_s.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 331,
+      "ruta": "rorschach/2_conc_l01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 332,
+      "ruta": "rorschach/2_conc_wall02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 333,
+      "ruta": "rorschach/2_c_thinredtrim03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 334,
+      "ruta": "rorschach/2_c_thinredtrimlight01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 335,
+      "ruta": "rorschach/2_c_tiles01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 336,
+      "ruta": "rorschach/2_floor02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 337,
+      "ruta": "rorschach/2_largemet03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 338,
+      "ruta": "rorschach/2_redtrim03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 339,
+      "ruta": "rorschach/2_red_floorr01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 340,
+      "ruta": "rorschach/2_red_floorw01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 341,
+      "ruta": "rorschach/2_whitetrim03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 342,
+      "ruta": "rorschach/3i_crust.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 343,
+      "ruta": "rorschach/3i_rockyfloor.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 344,
+      "ruta": "rorschach/3m_metflr_tiles.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 345,
+      "ruta": "rorschach/3r_colrust01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 346,
+      "ruta": "rorschach/3r_light01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 347,
+      "ruta": "rorschach/3r_lighthh01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 348,
+      "ruta": "rorschach/3r_metblock01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 349,
+      "ruta": "rorschach/3r_plaster02.jpg",
+      "estado": "escalada",
+      "archivo": "textures/rorschach/3r_plaster02.jpg"
+    },
+    {
+      "indice": 350,
+      "ruta": "rorschach/4_conc_floor01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 351,
+      "ruta": "rorschach/4_met01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 352,
+      "ruta": "rorschach/4_met05b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 353,
+      "ruta": "rorschach/5_blood01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 354,
+      "ruta": "rorschach/5_bricks01.jpg",
+      "estado": "escalada",
+      "archivo": "textures/rorschach/5_bricks01.jpg"
+    },
+    {
+      "indice": 355,
+      "ruta": "rorschach/5_faces.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 356,
+      "ruta": "rorschach/5_light01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 357,
+      "ruta": "rorschach/5_slabfloor.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 358,
+      "ruta": "rorschach/5_trim02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 359,
+      "ruta": "rorschach/64_iv_column01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 360,
+      "ruta": "rorschach/64_warm01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 361,
+      "ruta": "rorschach/hh3_mw_light01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 362,
+      "ruta": "rorschach/hh3_mw_light03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 363,
+      "ruta": "rorschach/hh3_m_light01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 364,
+      "ruta": "rorschach/hh3_m_light03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 365,
+      "ruta": "rorschach/j128_brick01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 366,
+      "ruta": "rorschach/j128_item.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 367,
+      "ruta": "rorschach/j128_metpan01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 368,
+      "ruta": "rorschach/j128_metpan05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 369,
+      "ruta": "rorschach/j256_cobl01.jpg",
+      "estado": "escalada",
+      "archivo": "textures/rorschach/j256_cobl01.jpg"
+    },
+    {
+      "indice": 370,
+      "ruta": "subverse/block_wall_02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 371,
+      "ruta": "subverse/brick_wall_01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 372,
+      "ruta": "subverse/brick_wall_06.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 373,
+      "ruta": "subverse/chunky_rock.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 374,
+      "ruta": "subverse/crate_space_vents.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 375,
+      "ruta": "subverse/dry_mud1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 376,
+      "ruta": "subverse/flat_rocks.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 377,
+      "ruta": "subverse/floor_tile_1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 378,
+      "ruta": "subverse/metal_scratch_tile.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 379,
+      "ruta": "subverse/metal_siding_kinks.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 380,
+      "ruta": "subverse/puzzel_block.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 381,
+      "ruta": "subverse/rock_vinelike.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 382,
+      "ruta": "subverse/solid_vent.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 383,
+      "ruta": "subverse/stone_path.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 384,
+      "ruta": "subverse/wood_crate_05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 385,
+      "ruta": "subverse/wood_crate_1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 386,
+      "ruta": "g_pack/g-bricks02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 387,
+      "ruta": "g_pack/g-bricks03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 388,
+      "ruta": "g_pack/g-bricks05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 389,
+      "ruta": "g_pack/g-bricks09.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 390,
+      "ruta": "g_pack/g-bricks10.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 391,
+      "ruta": "g_pack/g-bricks26.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 392,
+      "ruta": "g_pack/g-bricks27.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 393,
+      "ruta": "g_pack/g-bricks29.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 394,
+      "ruta": "g_pack/g-bricks30.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 395,
+      "ruta": "g_pack/g-bricks33.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 396,
+      "ruta": "g_pack/g-crate01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 397,
+      "ruta": "g_pack/g-facade01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 398,
+      "ruta": "g_pack/g-floor01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 399,
+      "ruta": "g_pack/g-floor04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 400,
+      "ruta": "g_pack/g-floor10.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 401,
+      "ruta": "g_pack/g-metbas0c1.jpg",
+      "estado": "original",
+      "archivo": "g_pack/g-metbas0c1.jpg"
+    },
+    {
+      "indice": 402,
+      "ruta": "g_pack/g-metbas5b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 403,
+      "ruta": "g_pack/g-metbas6.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 404,
+      "ruta": "g_pack/g-metfloor3b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 405,
+      "ruta": "g_pack/g-metfloor5b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 406,
+      "ruta": "g_pack/g-metfloor7b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 407,
+      "ruta": "g_pack/g-mettrim03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 408,
+      "ruta": "g_pack/g-wood02.jpg",
+      "estado": "original",
+      "archivo": "g_pack/g-wood02.jpg"
+    },
+    {
+      "indice": 409,
+      "ruta": "jf1/jfsquare.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 410,
+      "ruta": "jf1/jfyellow.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 411,
+      "ruta": "tech1soc/jp11a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 412,
+      "ruta": "tech1soc/flr_tmtl_drk.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 413,
+      "ruta": "philipk/pk01_floor01a_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 414,
+      "ruta": "philipk/pk01_floor01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 415,
+      "ruta": "philipk/pk01_gra_floor01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 416,
+      "ruta": "philipk/pk01_gra_floor01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 417,
+      "ruta": "philipk/pk01_gra_floor02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 418,
+      "ruta": "philipk/pk01_pan_floor02a_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 419,
+      "ruta": "philipk/pk01_pan_floor02b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 420,
+      "ruta": "philipk/pk01_pan_trim01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 421,
+      "ruta": "philipk/pk01_pan_wall01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 422,
+      "ruta": "philipk/pk01_pan_wall02a1_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 423,
+      "ruta": "philipk/pk01_pan_wall02a2_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 424,
+      "ruta": "philipk/pk01_pan_wall02b1_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 425,
+      "ruta": "philipk/pk01_pan_wall02b2_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 426,
+      "ruta": "philipk/pk01_roof01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 427,
+      "ruta": "philipk/pk01_thin_wall01a_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 428,
+      "ruta": "philipk/pk01_thin_wall01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 429,
+      "ruta": "philipk/pk01_thin_wall02a_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 430,
+      "ruta": "philipk/pk01_thin_wall02b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 431,
+      "ruta": "philipk/pk01_tile_floor01a_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 432,
+      "ruta": "philipk/pk01_tile_floor01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 433,
+      "ruta": "philipk/pk01_vent_wall01a_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 434,
+      "ruta": "philipk/pk01_vent_wall01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 435,
+      "ruta": "philipk/pk01_vent_wall02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 436,
+      "ruta": "philipk/pk01_vent_wall03_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 437,
+      "ruta": "philipk/pk01_wall01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 438,
+      "ruta": "philipk/pk01_wall03a_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 439,
+      "ruta": "philipk/pk01_wall03b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 440,
+      "ruta": "philipk/pk01_door01a_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 441,
+      "ruta": "philipk/pk01_door01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 442,
+      "ruta": "philipk/pk01_panel01a_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 443,
+      "ruta": "philipk/pk01_panel01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 444,
+      "ruta": "philipk/pk01_panel02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 445,
+      "ruta": "philipk/pk01_panel02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 446,
+      "ruta": "philipk/pk01_panel03a_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 447,
+      "ruta": "philipk/pk01_panel03b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 448,
+      "ruta": "philipk/pk01_panel_small01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 449,
+      "ruta": "philipk/pk01_panel_small02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 450,
+      "ruta": "philipk/pk01_trim02b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 451,
+      "ruta": "philipk/pk01_trim04b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 452,
+      "ruta": "philipk/pk01_trim05b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 453,
+      "ruta": "philipk/pk01_trim06b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 454,
+      "ruta": "philipk/pk01_trim07b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 455,
+      "ruta": "philipk/pk01_trim01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 456,
+      "ruta": "philipk/pk01_trim08b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 457,
+      "ruta": "philipk/pk01_trim03b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 458,
+      "ruta": "mitaman/mm-metaldoor3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 459,
+      "ruta": "mitaman/mm-tile38.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 460,
+      "ruta": "mitaman/mm-brickfloor15.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 461,
+      "ruta": "mitaman/mm-peelingpaint.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 462,
+      "ruta": "mitaman/mm-metalsteps.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 463,
+      "ruta": "mitaman/mm-window5.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 464,
+      "ruta": "mitaman/mm-window6.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 465,
+      "ruta": "mitaman/mm-grill_b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 466,
+      "ruta": "mitaman/mm-threadplate25a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 467,
+      "ruta": "mitaman/mm-metalbase2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 468,
+      "ruta": "mitaman/mm-window3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 469,
+      "ruta": "mitaman/mm-doorsindustrial69.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 470,
+      "ruta": "mitaman/mm-brick13.jpg",
+      "estado": "original",
+      "archivo": "mitaman/mm-brick13.jpg"
+    },
+    {
+      "indice": 471,
+      "ruta": "mitaman/mm-rust07.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 472,
+      "ruta": "mitaman/mm-doorsindustrial46.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 473,
+      "ruta": "mitaman/mm-metalbase3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 474,
+      "ruta": "mitaman/mm-roadattribute07a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 475,
+      "ruta": "mitaman/mm-bricksmall44.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 476,
+      "ruta": "mitaman/mm-panel1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 477,
+      "ruta": "mitaman/mm-panel2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 478,
+      "ruta": "mitaman/mm-doorsindustrial69.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 479,
+      "ruta": "mitaman/mm-brick56.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 480,
+      "ruta": "mitaman/mm-panel3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 481,
+      "ruta": "mitaman/mm-metalcontainer50.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 482,
+      "ruta": "mitaman/mm-wood02_fade.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 483,
+      "ruta": "mitaman/mm-planksnew01.jpg",
+      "estado": "original",
+      "archivo": "mitaman/mm-planksnew01.jpg"
+    },
+    {
+      "indice": 484,
+      "ruta": "mitaman/mm-metalstone.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 485,
+      "ruta": "mitaman/mm-grass33a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 486,
+      "ruta": "mitaman/mm-brick71a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 487,
+      "ruta": "mitaman/mm-sewer82.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 488,
+      "ruta": "mitaman/mm-border24.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 489,
+      "ruta": "mitaman/mm-brick56.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 490,
+      "ruta": "mitaman/mm-metalplates51.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 491,
+      "ruta": "mitaman/mm-ornament1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 492,
+      "ruta": "mitaman/mm-metalseam25.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 493,
+      "ruta": "mitaman/mm-metalplate173_1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 494,
+      "ruta": "mitaman/mm-metalplate173_long_1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 495,
+      "ruta": "mitaman/mm-metalplate173_long_1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 496,
+      "ruta": "mitaman/mm-metalcontainer50.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 497,
+      "ruta": "mitaman/mm-wood-worn.jpg",
+      "estado": "original",
+      "archivo": "mitaman/mm-wood-worn.jpg"
+    },
+    {
+      "indice": 498,
+      "ruta": "mitaman/mm-wood-worn.jpg",
+      "estado": "original",
+      "archivo": "mitaman/mm-wood-worn.jpg"
+    },
+    {
+      "indice": 499,
+      "ruta": "mitaman/mm-wood02_fade.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 500,
+      "ruta": "mitaman/mm-doorsindustrial46.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 501,
+      "ruta": "mitaman/mm-bricksmall121.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 502,
+      "ruta": "mitaman/mm-bricksmall06.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 503,
+      "ruta": "mitaman/mm-ceilinglite1.jpg",
+      "estado": "escalada",
+      "archivo": "textures/mitaman/mm-ceilinglite1.jpg"
+    },
+    {
+      "indice": 504,
+      "ruta": "mitaman/mm-ceilinglite3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 505,
+      "ruta": "mitaman/mm-stoneroof1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 506,
+      "ruta": "mitaman/mm-stone18.jpg",
+      "estado": "original",
+      "archivo": "mitaman/mm-stone18.jpg"
+    },
+    {
+      "indice": 507,
+      "ruta": "mitaman/mm-cementbase1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 508,
+      "ruta": "mitaman/mm-steellfloor.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 509,
+      "ruta": "mitaman/mm-woodshutter.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 510,
+      "ruta": "mitaman/mm-tilesmedium16.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 511,
+      "ruta": "mitaman/mm-metalbase1.jpg",
+      "estado": "original",
+      "archivo": "mitaman/mm-metalbase1.jpg"
+    },
+    {
+      "indice": 512,
+      "ruta": "mitaman/mm-concretebare07.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 513,
+      "ruta": "mitaman/mm-metalstone.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 514,
+      "ruta": "mitaman/mm-concretetrim07a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 515,
+      "ruta": "mitaman/mm-grateold.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 516,
+      "ruta": "mitaman/mm-meters12.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 517,
+      "ruta": "mitaman/mm-meters12a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 518,
+      "ruta": "mitaman/mm-radiatorcoil.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 519,
+      "ruta": "mitaman/mm-threadplate01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 520,
+      "ruta": "mitaman/mm-threadplate01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 521,
+      "ruta": "mitaman/mm-metaltrim02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 522,
+      "ruta": "mitaman/mm-metaltrim02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 523,
+      "ruta": "mitaman/mm-controlplate.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 524,
+      "ruta": "mitaman/mm-meters12b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 525,
+      "ruta": "mitaman/mm-planksnew01.jpg",
+      "estado": "original",
+      "archivo": "mitaman/mm-planksnew01.jpg"
+    },
+    {
+      "indice": 526,
+      "ruta": "mitaman/mm-controlplate2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 527,
+      "ruta": "mitaman/mm-controlplate3a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 528,
+      "ruta": "mitaman/mm-controlplateside.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 529,
+      "ruta": "mitaman/mm-tiles126.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 530,
+      "ruta": "mitaman/mm-brickold88a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 531,
+      "ruta": "mitaman/mm-grassdead42.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 532,
+      "ruta": "noctua/iron02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 533,
+      "ruta": "noctua/plast07.jpg",
+      "estado": "original",
+      "archivo": "noctua/plast07.jpg"
+    },
+    {
+      "indice": 534,
+      "ruta": "noctua/planks01.jpg",
+      "estado": "original",
+      "archivo": "noctua/planks01.jpg"
+    },
+    {
+      "indice": 535,
+      "ruta": "noctua/planks01.jpg",
+      "estado": "original",
+      "archivo": "noctua/planks01.jpg"
+    },
+    {
+      "indice": 536,
+      "ruta": "noctua/plast06.jpg",
+      "estado": "original",
+      "archivo": "noctua/plast06.jpg"
+    },
+    {
+      "indice": 537,
+      "ruta": "noctua/plast06.jpg",
+      "estado": "original",
+      "archivo": "noctua/plast06.jpg"
+    },
+    {
+      "indice": 538,
+      "ruta": "noctua/conc01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 539,
+      "ruta": "noctua/conc01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 540,
+      "ruta": "loopix/cobbst2.jpg",
+      "estado": "original",
+      "archivo": "loopix/cobbst2.jpg"
+    },
+    {
+      "indice": 541,
+      "ruta": "g_pack/g-sewer02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 542,
+      "ruta": "g_pack/g-grates09.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 543,
+      "ruta": "g_pack/g-concrete05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 544,
+      "ruta": "textures/nieb/rock01.jpg",
+      "estado": "original",
+      "archivo": "textures/nieb/rock01.jpg"
+    },
+    {
+      "indice": 545,
+      "ruta": "ikbase/specialbrick.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 546,
+      "ruta": "painkillah/pk_arabic_rosetonB_cc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 547,
+      "ruta": "painkillah/pk_arabic_rosetonR_cc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 548,
+      "ruta": "painkillah/pk_arabic_rosetonY_cc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 549,
+      "ruta": "painkillah/pk_arlequin_blue_cc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 550,
+      "ruta": "painkillah/pk_arlequin_brown_cc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 551,
+      "ruta": "painkillah/pk_arlequin_cc.jpg",
+      "estado": "dato"
+    },
+    {
+      "indice": 552,
+      "ruta": "painkillah/pk_broken_vitral_cc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 553,
+      "ruta": "painkillah/pk_cotage_color_cc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 554,
+      "ruta": "painkillah/pk_cotage_cc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 555,
+      "ruta": "painkillah/pk_flower_vitral_cc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 556,
+      "ruta": "painkillah/pk_flwh_vitral_cc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 557,
+      "ruta": "painkillah/pk_roseton_vitral_cc.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 558,
+      "ruta": "textures/nieb/floor1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 559,
+      "ruta": "textures/nieb/floor2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 560,
+      "ruta": "textures/nieb/grass1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 561,
+      "ruta": "textures/nieb/rock02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 562,
+      "ruta": "textures/nieb/sand01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 563,
+      "ruta": "textures/nieb/sand02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 564,
+      "ruta": "textures/nieb/concrete-tan.jpg",
+      "estado": "original",
+      "archivo": "textures/nieb/concrete-tan.jpg"
+    },
+    {
+      "indice": 565,
+      "ruta": "textures/nieb/concrete-red.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 566,
+      "ruta": "textures/nieb/brick-tan.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 567,
+      "ruta": "textures/nieb/brick-red.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 568,
+      "ruta": "textures/nieb/concrete-light.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 569,
+      "ruta": "textures/nieb/concrete-dark.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 570,
+      "ruta": "textures/nieb/rubber-trim.jpg",
+      "estado": "original",
+      "archivo": "textures/nieb/rubber-trim.jpg"
+    },
+    {
+      "indice": 571,
+      "ruta": "textures/nieb/door1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 572,
+      "ruta": "textures/nieb/metal-orange.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 573,
+      "ruta": "textures/nieb/metal-grey.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 574,
+      "ruta": "textures/nieb/metal-door.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 575,
+      "ruta": "textures/nieb/box1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 576,
+      "ruta": "textures/nieb/box2.jpg",
+      "estado": "escalada",
+      "archivo": "textures/textures/nieb/box2.jpg"
+    },
+    {
+      "indice": 577,
+      "ruta": "textures/nieb/stripes.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 578,
+      "ruta": "textures/nieb/stripes.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 579,
+      "ruta": "textures/nieb/step-side.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 580,
+      "ruta": "textures/nieb/step-top.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 581,
+      "ruta": "textures/nieb/step-top.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 582,
+      "ruta": "textures/nieb/step-top.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 583,
+      "ruta": "textures/nieb/step-top.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 584,
+      "ruta": "textures/nieb/step-top2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 585,
+      "ruta": "textures/nieb/step-top2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 586,
+      "ruta": "textures/nieb/beam.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 587,
+      "ruta": "textures/nieb/beam.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 588,
+      "ruta": "textures/nieb/beam.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 589,
+      "ruta": "textures/nieb/beam.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 590,
+      "ruta": "textures/nieb/worldmap.png",
+      "estado": "missing"
+    },
+    {
+      "indice": 591,
+      "ruta": "textures/nieb/light.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 592,
+      "ruta": "textures/nieb/light.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 593,
+      "ruta": "textures/nieb/stone1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 594,
+      "ruta": "textures/nieb/stone1b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 595,
+      "ruta": "textures/nieb/stone2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 596,
+      "ruta": "textures/nieb/stone3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 597,
+      "ruta": "textures/nieb/rough1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 598,
+      "ruta": "textures/nieb/clone/box03a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 599,
+      "ruta": "textures/nieb/clone/brick02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 600,
+      "ruta": "textures/nieb/clone/brick03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 601,
+      "ruta": "textures/nieb/clone/brick04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 602,
+      "ruta": "textures/nieb/clone/brick05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 603,
+      "ruta": "textures/nieb/clone/brick06.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 604,
+      "ruta": "textures/nieb/clone/brick07.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 605,
+      "ruta": "textures/nieb/clone/brick07_top.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 606,
+      "ruta": "textures/nieb/clone/brick08.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 607,
+      "ruta": "textures/nieb/clone/brick09.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 608,
+      "ruta": "textures/nieb/clone/brick10.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 609,
+      "ruta": "textures/nieb/clone/carpet01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 610,
+      "ruta": "textures/nieb/clone/ceiling-tile01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 611,
+      "ruta": "textures/nieb/clone/ceiling-tile01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 612,
+      "ruta": "textures/nieb/clone/ceiling-tile01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 613,
+      "ruta": "textures/nieb/clone/concrete03-moss.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 614,
+      "ruta": "textures/nieb/clone/concrete04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 615,
+      "ruta": "textures/nieb/clone/concrete05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 616,
+      "ruta": "textures/nieb/clone/concrete06.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 617,
+      "ruta": "textures/nieb/clone/concrete07.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 618,
+      "ruta": "textures/nieb/clone/concrete08.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 619,
+      "ruta": "textures/nieb/clone/concrete09.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 620,
+      "ruta": "textures/nieb/clone/concrete10.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 621,
+      "ruta": "textures/nieb/clone/concrete11.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 622,
+      "ruta": "textures/nieb/clone/concrete12.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 623,
+      "ruta": "textures/nieb/clone/container01-end1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 624,
+      "ruta": "textures/nieb/clone/container01-end2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 625,
+      "ruta": "textures/nieb/clone/container01-end3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 626,
+      "ruta": "textures/nieb/clone/container01-top-end.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 627,
+      "ruta": "textures/nieb/clone/container01-top.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 628,
+      "ruta": "textures/nieb/clone/container01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 629,
+      "ruta": "textures/nieb/clone/dirt02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 630,
+      "ruta": "textures/nieb/clone/door02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 631,
+      "ruta": "textures/nieb/clone/door03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 632,
+      "ruta": "textures/nieb/clone/grass02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 633,
+      "ruta": "textures/nieb/clone/grass03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 634,
+      "ruta": "textures/nieb/clone/grass05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 635,
+      "ruta": "textures/nieb/clone/grass06.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 636,
+      "ruta": "textures/nieb/clone/grass07.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 637,
+      "ruta": "textures/nieb/clone/grass08.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 638,
+      "ruta": "textures/nieb/clone/grass09.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 639,
+      "ruta": "textures/nieb/clone/grass10.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 640,
+      "ruta": "textures/nieb/clone/grass12.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 641,
+      "ruta": "textures/nieb/clone/gravel01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 642,
+      "ruta": "textures/nieb/clone/gravel02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 643,
+      "ruta": "textures/nieb/clone/gravel05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 644,
+      "ruta": "textures/nieb/clone/leaf01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 645,
+      "ruta": "textures/nieb/clone/leaf02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 646,
+      "ruta": "textures/nieb/clone/metal02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 647,
+      "ruta": "textures/nieb/clone/metal_plate01-tan.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 648,
+      "ruta": "textures/nieb/clone/metal_plate02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 649,
+      "ruta": "textures/nieb/clone/plaster01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 650,
+      "ruta": "textures/nieb/clone/plaster02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 651,
+      "ruta": "textures/nieb/clone/plaster03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 652,
+      "ruta": "textures/nieb/clone/plaster04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 653,
+      "ruta": "textures/nieb/clone/plaster05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 654,
+      "ruta": "textures/nieb/clone/plaster06.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 655,
+      "ruta": "textures/nieb/clone/plaster07.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 656,
+      "ruta": "textures/nieb/clone/plaster08.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 657,
+      "ruta": "textures/nieb/clone/plaster09.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 658,
+      "ruta": "textures/nieb/clone/plaster10.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 659,
+      "ruta": "textures/nieb/clone/road01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 660,
+      "ruta": "textures/nieb/clone/rock01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 661,
+      "ruta": "textures/nieb/clone/rock03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 662,
+      "ruta": "textures/nieb/clone/rock04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 663,
+      "ruta": "textures/nieb/clone/rock06.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 664,
+      "ruta": "textures/nieb/clone/sand02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 665,
+      "ruta": "textures/nieb/clone/sand03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 666,
+      "ruta": "textures/nieb/clone/sand04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 667,
+      "ruta": "textures/nieb/clone/sand05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 668,
+      "ruta": "textures/nieb/clone/sand07.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 669,
+      "ruta": "textures/nieb/clone/sand08.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 670,
+      "ruta": "textures/nieb/clone/sand09.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 671,
+      "ruta": "textures/nieb/clone/sandstone01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 672,
+      "ruta": "textures/nieb/clone/sandstone02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 673,
+      "ruta": "textures/nieb/clone/sandstone03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 674,
+      "ruta": "textures/nieb/clone/sandstone04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 675,
+      "ruta": "textures/nieb/clone/sandstone05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 676,
+      "ruta": "textures/nieb/clone/sandstone07.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 677,
+      "ruta": "textures/nieb/clone/sandstone08.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 678,
+      "ruta": "textures/nieb/clone/sandstone09a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 679,
+      "ruta": "textures/nieb/clone/sandstone09b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 680,
+      "ruta": "textures/nieb/clone/sandstone10a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 681,
+      "ruta": "textures/nieb/clone/sandstone10b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 682,
+      "ruta": "textures/nieb/clone/sandstone11a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 683,
+      "ruta": "textures/nieb/clone/sandstone12.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 684,
+      "ruta": "textures/nieb/clone/stone01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 685,
+      "ruta": "textures/nieb/clone/target01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 686,
+      "ruta": "textures/nieb/clone/tarp01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 687,
+      "ruta": "textures/nieb/clone/trim02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 688,
+      "ruta": "textures/nieb/clone/trim03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 689,
+      "ruta": "textures/nieb/clone/trim04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 690,
+      "ruta": "textures/nieb/clone/trim05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 691,
+      "ruta": "textures/nieb/clone/trim06.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 692,
+      "ruta": "textures/nieb/clone/trim07a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 693,
+      "ruta": "textures/nieb/clone/trim07b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 694,
+      "ruta": "textures/nieb/clone/trim08.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 695,
+      "ruta": "textures/nieb/clone/trim09a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 696,
+      "ruta": "textures/nieb/clone/trim09b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 697,
+      "ruta": "textures/nieb/clone/trim09c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 698,
+      "ruta": "textures/nieb/clone/trim10.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 699,
+      "ruta": "textures/nieb/clone/trim11.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 700,
+      "ruta": "textures/nieb/clone/wall01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 701,
+      "ruta": "textures/nieb/clone/wall02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 702,
+      "ruta": "textures/nieb/clone/window01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 703,
+      "ruta": "textures/nieb/clone/wood-floor01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 704,
+      "ruta": "textures/nieb/clone/wood01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 705,
+      "ruta": "textures/nieb/clone/wood02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 706,
+      "ruta": "textures/nieb/clone/wood03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 707,
+      "ruta": "textures/nieb/clone/wood04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 708,
+      "ruta": "textures/nieb/clone/woodchip01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 709,
+      "ruta": "textures/nieb/clone/woodchip02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 710,
+      "ruta": "textures/nieb/clone/wood-floor01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 711,
+      "ruta": "textures/nieb/suite/brickolddirty0067.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 712,
+      "ruta": "textures/nieb/suite/brickolddirty0072.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 713,
+      "ruta": "textures/nieb/suite/brickolddirty0076.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 714,
+      "ruta": "textures/nieb/suite/concreterough0023.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 715,
+      "ruta": "textures/nieb/suite/floorsregular0100.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 716,
+      "ruta": "textures/nieb/suite/ornamentborder0135.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 717,
+      "ruta": "textures/nieb/suite/rooftilesslate0045.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 718,
+      "ruta": "blikjebier/akaritori/brick_big.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 719,
+      "ruta": "blikjebier/akaritori/brick_big2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 720,
+      "ruta": "blikjebier/akaritori/brick_big3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 721,
+      "ruta": "blikjebier/akaritori/brick_big4.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 722,
+      "ruta": "blikjebier/akaritori/brick_big5.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 723,
+      "ruta": "blikjebier/akaritori/brick_white.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 724,
+      "ruta": "blikjebier/akaritori/brick.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 725,
+      "ruta": "blikjebier/akaritori/concrete.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 726,
+      "ruta": "blikjebier/akaritori/concrete1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 727,
+      "ruta": "blikjebier/akaritori/concrete2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 728,
+      "ruta": "blikjebier/akaritori/concrete3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 729,
+      "ruta": "blikjebier/akaritori/floor.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 730,
+      "ruta": "blikjebier/akaritori/floor1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 731,
+      "ruta": "blikjebier/akaritori/floor2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 732,
+      "ruta": "blikjebier/akaritori/floor3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 733,
+      "ruta": "blikjebier/akaritori/floor4.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 734,
+      "ruta": "blikjebier/akaritori/floor5.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 735,
+      "ruta": "blikjebier/akaritori/floor6.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 736,
+      "ruta": "blikjebier/akaritori/floor7.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 737,
+      "ruta": "blikjebier/akaritori/floor8.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 738,
+      "ruta": "blikjebier/akaritori/metal.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 739,
+      "ruta": "blikjebier/akaritori/metal2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 740,
+      "ruta": "blikjebier/akaritori/metal3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 741,
+      "ruta": "blikjebier/akaritori/metal4.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 742,
+      "ruta": "blikjebier/akaritori/metal5.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 743,
+      "ruta": "blikjebier/akaritori/rim1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 744,
+      "ruta": "blikjebier/akaritori/rim2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 745,
+      "ruta": "blikjebier/akaritori/rim3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 746,
+      "ruta": "blikjebier/akaritori/rim4.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 747,
+      "ruta": "blikjebier/akaritori/rim5.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 748,
+      "ruta": "blikjebier/akaritori/rim6.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 749,
+      "ruta": "blikjebier/akaritori/rust.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 750,
+      "ruta": "blikjebier/akaritori/rustpaint.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 751,
+      "ruta": "blikjebier/akaritori/treadplate.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 752,
+      "ruta": "blikjebier/akaritori/treadplate2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 753,
+      "ruta": "blikjebier/akaritori/wall.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 754,
+      "ruta": "blikjebier/akaritori/wall2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 755,
+      "ruta": "blikjebier/akaritori/wall3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 756,
+      "ruta": "blikjebier/akaritori/window.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 757,
+      "ruta": "blikjebier/akaritori/window2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 758,
+      "ruta": "blikjebier/akaritori/window3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 759,
+      "ruta": "blikjebier/akaritori/window4.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 760,
+      "ruta": "blikjebier/akaritori/window5.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 761,
+      "ruta": "blikjebier/akaritori/window6.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 762,
+      "ruta": "blikjebier/akaritori/light_g.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 763,
+      "ruta": "blikjebier/akaritori/window7.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 764,
+      "ruta": "blikjebier/akaritori/window8.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 765,
+      "ruta": "blikjebier/concrete/concrete_001.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 766,
+      "ruta": "blikjebier/concrete/concrete_002.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 767,
+      "ruta": "blikjebier/concrete/concrete_003.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 768,
+      "ruta": "blikjebier/concrete/concrete_004.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 769,
+      "ruta": "blikjebier/concrete/concrete_005.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 770,
+      "ruta": "blikjebier/concrete/concrete_006.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 771,
+      "ruta": "blikjebier/concrete/concrete_007.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 772,
+      "ruta": "blikjebier/concrete/concrete_008.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 773,
+      "ruta": "blikjebier/concrete/concrete_009.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 774,
+      "ruta": "blikjebier/concrete/concrete_010.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 775,
+      "ruta": "blikjebier/concrete/concrete_011.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 776,
+      "ruta": "blikjebier/concrete/concrete_012.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 777,
+      "ruta": "blikjebier/concrete/concrete_013.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 778,
+      "ruta": "blikjebier/metal/metal_001.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 779,
+      "ruta": "blikjebier/metal/metal_002.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 780,
+      "ruta": "blikjebier/metal/metal_003.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 781,
+      "ruta": "blikjebier/metal/metal_004.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 782,
+      "ruta": "blikjebier/metal/metal_005.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 783,
+      "ruta": "blikjebier/metal/metal_006.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 784,
+      "ruta": "blikjebier/metal/metal_007.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 785,
+      "ruta": "blikjebier/metal/metal_008.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 786,
+      "ruta": "blikjebier/metal/metal_009.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 787,
+      "ruta": "blikjebier/metal/metal_010.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 788,
+      "ruta": "blikjebier/metal/metal_010.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 789,
+      "ruta": "blikjebier/metal/metal_011.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 790,
+      "ruta": "blikjebier/metal/metal_011.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 791,
+      "ruta": "blikjebier/metal/metal_012.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 792,
+      "ruta": "blikjebier/metal/metal_013.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 793,
+      "ruta": "blikjebier/metal/metal_014.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 794,
+      "ruta": "blikjebier/metal/metal_014.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 795,
+      "ruta": "blikjebier/metal/metal_015.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 796,
+      "ruta": "blikjebier/metal/metal_015.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 797,
+      "ruta": "blikjebier/metal/metal_016.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 798,
+      "ruta": "blikjebier/metal/metal_016.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 799,
+      "ruta": "blikjebier/metal/metal_017.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 800,
+      "ruta": "blikjebier/metal/metal_017.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 801,
+      "ruta": "blikjebier/ground/ground1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 802,
+      "ruta": "blikjebier/ground/ground2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 803,
+      "ruta": "blikjebier/ground/ground3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 804,
+      "ruta": "blikjebier/ground/ground4.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 805,
+      "ruta": "blikjebier/ground/ground5.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 806,
+      "ruta": "blikjebier/ground/g1mm.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 807,
+      "ruta": "blikjebier/snow/clear_snow.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 808,
+      "ruta": "blikjebier/snow/dirty_snow.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 809,
+      "ruta": "egyptsoc/032-06a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 810,
+      "ruta": "egyptsoc/032-06b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 811,
+      "ruta": "egyptsoc/048-02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 812,
+      "ruta": "egyptsoc/064-01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 813,
+      "ruta": "egyptsoc/064-01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 814,
+      "ruta": "egyptsoc/064-07a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 815,
+      "ruta": "egyptsoc/064-07b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 816,
+      "ruta": "egyptsoc/128-05a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 817,
+      "ruta": "egyptsoc/128-05b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 818,
+      "ruta": "egyptsoc/block07a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 819,
+      "ruta": "egyptsoc/block09a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 820,
+      "ruta": "egyptsoc/block09b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 821,
+      "ruta": "egyptsoc/marker1ag.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 822,
+      "ruta": "egyptsoc/marker1bg.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 823,
+      "ruta": "egyptsoc/s064-05a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 824,
+      "ruta": "egyptsoc/s064-05b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 825,
+      "ruta": "egyptsoc/sand1b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 826,
+      "ruta": "egyptsoc/stepangle01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 827,
+      "ruta": "egyptsoc/stepangle01d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 828,
+      "ruta": "egyptsoc/stone04a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 829,
+      "ruta": "egyptsoc/stone08a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 830,
+      "ruta": "egyptsoc/stone08b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 831,
+      "ruta": "egyptsoc/stone09a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 832,
+      "ruta": "egyptsoc/stone09b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 833,
+      "ruta": "egyptsoc/stone10a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 834,
+      "ruta": "egyptsoc/stone11a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 835,
+      "ruta": "egyptsoc/stone11b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 836,
+      "ruta": "egyptsoc/wood05a.jpg",
+      "estado": "escalada",
+      "archivo": "textures/egyptsoc/wood05a.jpg"
+    },
+    {
+      "indice": 837,
+      "ruta": "egyptsoc/stone03bb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 838,
+      "ruta": "egyptsoc/032-01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 839,
+      "ruta": "egyptsoc/032-03b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 840,
+      "ruta": "egyptsoc/032-04b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 841,
+      "ruta": "egyptsoc/032-05a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 842,
+      "ruta": "egyptsoc/032-06c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 843,
+      "ruta": "egyptsoc/048-01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 844,
+      "ruta": "egyptsoc/064-01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 845,
+      "ruta": "egyptsoc/064-02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 846,
+      "ruta": "egyptsoc/064-02c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 847,
+      "ruta": "egyptsoc/064-03c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 848,
+      "ruta": "egyptsoc/064-04a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 849,
+      "ruta": "egyptsoc/064-04c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 850,
+      "ruta": "egyptsoc/128-01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 851,
+      "ruta": "egyptsoc/128-01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 852,
+      "ruta": "egyptsoc/128-01pa.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 853,
+      "ruta": "egyptsoc/128-01pb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 854,
+      "ruta": "egyptsoc/128-02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 855,
+      "ruta": "egyptsoc/128-02pa.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 856,
+      "ruta": "egyptsoc/128-02pb.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 857,
+      "ruta": "egyptsoc/128-03a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 858,
+      "ruta": "egyptsoc/128-03b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 859,
+      "ruta": "egyptsoc/128-04c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 860,
+      "ruta": "egyptsoc/128-04dr.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 861,
+      "ruta": "egyptsoc/128-05f.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 862,
+      "ruta": "egyptsoc/128-05g.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 863,
+      "ruta": "egyptsoc/128-05h.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 864,
+      "ruta": "egyptsoc/128-05i.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 865,
+      "ruta": "egyptsoc/128-05j.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 866,
+      "ruta": "egyptsoc/256-01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 867,
+      "ruta": "egyptsoc/256-03a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 868,
+      "ruta": "egyptsoc/256-03c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 869,
+      "ruta": "egyptsoc/256-03d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 870,
+      "ruta": "egyptsoc/256-04b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 871,
+      "ruta": "egyptsoc/256-04c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 872,
+      "ruta": "egyptsoc/block01a-mat.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 873,
+      "ruta": "egyptsoc/block01b-mat.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 874,
+      "ruta": "egyptsoc/block01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 875,
+      "ruta": "egyptsoc/block02b-floor.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 876,
+      "ruta": "egyptsoc/block02c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 877,
+      "ruta": "egyptsoc/block03a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 878,
+      "ruta": "egyptsoc/block04b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 879,
+      "ruta": "egyptsoc/block06a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 880,
+      "ruta": "egyptsoc/block06b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 881,
+      "ruta": "egyptsoc/block08b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 882,
+      "ruta": "egyptsoc/block08c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 883,
+      "ruta": "egyptsoc/block10a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 884,
+      "ruta": "egyptsoc/block10b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 885,
+      "ruta": "egyptsoc/lig_128-05a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 886,
+      "ruta": "egyptsoc/lig_128-05b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 887,
+      "ruta": "egyptsoc/s064-01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 888,
+      "ruta": "egyptsoc/s064-01ed.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 889,
+      "ruta": "egyptsoc/s064-05d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 890,
+      "ruta": "egyptsoc/s064-05l.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 891,
+      "ruta": "egyptsoc/s064-05n.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 892,
+      "ruta": "egyptsoc/s128-01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 893,
+      "ruta": "egyptsoc/s128-01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 894,
+      "ruta": "egyptsoc/s128-01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 895,
+      "ruta": "egyptsoc/s128-01cr.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 896,
+      "ruta": "egyptsoc/s128-01dr.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 897,
+      "ruta": "egyptsoc/s128-01e.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 898,
+      "ruta": "egyptsoc/s128-02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 899,
+      "ruta": "egyptsoc/s128-02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 900,
+      "ruta": "egyptsoc/s128-02dd.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 901,
+      "ruta": "egyptsoc/s128-02dr.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 902,
+      "ruta": "egyptsoc/s128-02e.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 903,
+      "ruta": "egyptsoc/s128-04b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 904,
+      "ruta": "egyptsoc/step01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 905,
+      "ruta": "egyptsoc/step01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 906,
+      "ruta": "egyptsoc/stepangle01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 907,
+      "ruta": "egyptsoc/stepangle01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 908,
+      "ruta": "egyptsoc/stone03c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 909,
+      "ruta": "egyptsoc/stone04c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 910,
+      "ruta": "egyptsoc/stone05a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 911,
+      "ruta": "egyptsoc/stone05b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 912,
+      "ruta": "egyptsoc/stone06a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 913,
+      "ruta": "egyptsoc/stone07a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 914,
+      "ruta": "egyptsoc/stone08c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 915,
+      "ruta": "egyptsoc/stone09c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 916,
+      "ruta": "egyptsoc/stone09d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 917,
+      "ruta": "egyptsoc/stone10c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 918,
+      "ruta": "egyptsoc/stone11d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 919,
+      "ruta": "egyptsoc/t064-01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 920,
+      "ruta": "egyptsoc/t064-02a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 921,
+      "ruta": "egyptsoc/t064-02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 922,
+      "ruta": "egyptsoc/v064-01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 923,
+      "ruta": "egyptsoc/v064-02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 924,
+      "ruta": "egyptsoc/v128-02b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 925,
+      "ruta": "egyptsoc/v128-02cd.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 926,
+      "ruta": "egyptsoc/v128-03b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 927,
+      "ruta": "egyptsoc/v128-03d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 928,
+      "ruta": "egyptsoc/wood04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 929,
+      "ruta": "egyptsoc/wood05b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 930,
+      "ruta": "egyptsoc/wood09.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 931,
+      "ruta": "egyptsoc/wood18.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 932,
+      "ruta": "egyptsoc/wood18_diagonal.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 933,
+      "ruta": "egyptsoc/woodmgrid3a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 934,
+      "ruta": "egyptsoc/jumppad1ar.png",
+      "estado": "missing"
+    },
+    {
+      "indice": 935,
+      "ruta": "egyptsoc/jumppad1bb.png",
+      "estado": "missing"
+    },
+    {
+      "indice": 936,
+      "ruta": "egyptsoc/jumppad1bg.png",
+      "estado": "missing"
+    },
+    {
+      "indice": 937,
+      "ruta": "egyptsoc/lig_032-01y2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 938,
+      "ruta": "egyptsoc/lig_032-03w1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 939,
+      "ruta": "egyptsoc/lig_032-04r2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 940,
+      "ruta": "egyptsoc/lig_064-01w1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 941,
+      "ruta": "egyptsoc/lig_064-01w2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 942,
+      "ruta": "egyptsoc/lig_064-02y1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 943,
+      "ruta": "egyptsoc/lig_064-05b1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 944,
+      "ruta": "egyptsoc/lig_064-05w2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 945,
+      "ruta": "egyptsoc/lig_064-05y2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 946,
+      "ruta": "egyptsoc/lig_064-06b2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 947,
+      "ruta": "egyptsoc/lig_064-06r2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 948,
+      "ruta": "egyptsoc/lig_064-06w1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 949,
+      "ruta": "egyptsoc/lig_064-06y2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 950,
+      "ruta": "egyptsoc/lig_128-05y1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 951,
+      "ruta": "egyptsoc/lig_b064-01a.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 952,
+      "ruta": "egyptsoc/lig_b064-01b.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 953,
+      "ruta": "egyptsoc/lig_b064-01c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 954,
+      "ruta": "egyptsoc/lig_b064-01d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 955,
+      "ruta": "textures/fatum/black.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 956,
+      "ruta": "textures/fatum/border.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 957,
+      "ruta": "textures/fatum/border2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 958,
+      "ruta": "textures/fatum/border3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 959,
+      "ruta": "textures/fatum/border4.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 960,
+      "ruta": "textures/fatum/border5.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 961,
+      "ruta": "textures/fatum/border6.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 962,
+      "ruta": "textures/fatum/border7.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 963,
+      "ruta": "textures/fatum/border8.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 964,
+      "ruta": "textures/fatum/border9.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 965,
+      "ruta": "textures/fatum/border_toscana.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 966,
+      "ruta": "textures/fatum/box.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 967,
+      "ruta": "textures/fatum/boxtop.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 968,
+      "ruta": "textures/fatum/bricks.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 969,
+      "ruta": "textures/fatum/bricks2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 970,
+      "ruta": "textures/fatum/bricks3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 971,
+      "ruta": "textures/fatum/bricks4.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 972,
+      "ruta": "textures/fatum/ceiling.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 973,
+      "ruta": "textures/fatum/concrete1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 974,
+      "ruta": "textures/fatum/concrete2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 975,
+      "ruta": "textures/fatum/concrete3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 976,
+      "ruta": "textures/fatum/concreteblock.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 977,
+      "ruta": "textures/fatum/cube2logo.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 978,
+      "ruta": "textures/fatum/deadgrass.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 979,
+      "ruta": "textures/fatum/door.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 980,
+      "ruta": "textures/fatum/door2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 981,
+      "ruta": "textures/fatum/door3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 982,
+      "ruta": "textures/fatum/exit.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 983,
+      "ruta": "textures/fatum/exit2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 984,
+      "ruta": "textures/fatum/floor1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 985,
+      "ruta": "textures/fatum/floor2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 986,
+      "ruta": "textures/fatum/flowergrass.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 987,
+      "ruta": "textures/fatum/ga.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 988,
+      "ruta": "textures/fatum/golfgrass.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 989,
+      "ruta": "textures/fatum/grey.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 990,
+      "ruta": "textures/fatum/health.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 991,
+      "ruta": "textures/fatum/light.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 992,
+      "ruta": "textures/fatum/marble.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 993,
+      "ruta": "textures/fatum/metal.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 994,
+      "ruta": "textures/fatum/metal2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 995,
+      "ruta": "textures/fatum/metalsheet.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 996,
+      "ruta": "textures/fatum/oak1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 997,
+      "ruta": "textures/fatum/ornament1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 998,
+      "ruta": "textures/fatum/ornament2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 999,
+      "ruta": "textures/fatum/ornament3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1000,
+      "ruta": "textures/fatum/ornament4.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1001,
+      "ruta": "textures/fatum/ornamentborder1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1002,
+      "ruta": "textures/fatum/ornamentborder2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1003,
+      "ruta": "textures/fatum/ornamentborder3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1004,
+      "ruta": "textures/fatum/quad.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1005,
+      "ruta": "textures/fatum/red.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1006,
+      "ruta": "textures/fatum/redbricks.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1007,
+      "ruta": "textures/fatum/redlightarrows.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1008,
+      "ruta": "textures/fatum/redwhiteborder.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1009,
+      "ruta": "textures/fatum/rock.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1010,
+      "ruta": "textures/fatum/rock2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1011,
+      "ruta": "textures/fatum/roof.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1012,
+      "ruta": "textures/fatum/roof2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1013,
+      "ruta": "textures/fatum/rooftop.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1014,
+      "ruta": "textures/fatum/sheet.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1015,
+      "ruta": "textures/fatum/sheet2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1016,
+      "ruta": "textures/fatum/sheet3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1017,
+      "ruta": "textures/fatum/shutter.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1018,
+      "ruta": "textures/fatum/sign.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1019,
+      "ruta": "textures/fatum/stainedwindow.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1020,
+      "ruta": "textures/fatum/stainedwindow2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1021,
+      "ruta": "textures/fatum/stainedwindow3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1022,
+      "ruta": "textures/fatum/tiles.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1023,
+      "ruta": "textures/fatum/tiles2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1024,
+      "ruta": "textures/fatum/tiles3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1025,
+      "ruta": "textures/fatum/tiles4.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1026,
+      "ruta": "textures/fatum/tiles5.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1027,
+      "ruta": "textures/fatum/tiles6.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1028,
+      "ruta": "textures/fatum/trinacria1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1029,
+      "ruta": "textures/fatum/vent.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1030,
+      "ruta": "textures/fatum/vmarble.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1031,
+      "ruta": "textures/fatum/wallsheet.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1032,
+      "ruta": "textures/fatum/white.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1033,
+      "ruta": "textures/fatum/window.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1034,
+      "ruta": "textures/fatum/window1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1035,
+      "ruta": "textures/fatum/window2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1036,
+      "ruta": "textures/fatum/window3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1037,
+      "ruta": "textures/fatum/wood.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1038,
+      "ruta": "textures/fatum/ya.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1039,
+      "ruta": "textures/fatum/yellowstripes.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1040,
+      "ruta": "textures/fatum/zavial1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1041,
+      "ruta": "textures/fatum/zavial2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1042,
+      "ruta": "textures/fatum/zavial3.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1043,
+      "ruta": "textures/philipk/pk02/dec_num00.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1044,
+      "ruta": "textures/philipk/pk02/dec_num01.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1045,
+      "ruta": "textures/philipk/pk02/dec_num02.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1046,
+      "ruta": "textures/philipk/pk02/dec_num03.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1047,
+      "ruta": "textures/philipk/pk02/dec_num04.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1048,
+      "ruta": "textures/philipk/pk02/dec_num05.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1049,
+      "ruta": "textures/philipk/pk02/dec_num06.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1050,
+      "ruta": "textures/philipk/pk02/dec_num07.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1051,
+      "ruta": "textures/philipk/pk02/dec_num08.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1052,
+      "ruta": "textures/philipk/pk02/dec_num09.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1053,
+      "ruta": "textures/philipk/pk02/dec_numA.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1054,
+      "ruta": "textures/philipk/pk02/dec_numB.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1055,
+      "ruta": "textures/philipk/pk02/dec_numC.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1056,
+      "ruta": "textures/yves_allaire/ex/light_u201_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1057,
+      "ruta": "textures/yves_allaire/ex/lightpanel_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1058,
+      "ruta": "textures/yves_allaire/ex/clangfloor_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1059,
+      "ruta": "textures/yves_allaire/ex/clangfloor_01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1060,
+      "ruta": "textures/yves_allaire/ex/cretebase_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1061,
+      "ruta": "textures/yves_allaire/ex/cretebase_02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1062,
+      "ruta": "textures/yves_allaire/ex/cretebase_03_dark_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1063,
+      "ruta": "textures/yves_allaire/ex/cretefloor_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1064,
+      "ruta": "textures/yves_allaire/ex/cretefloor_01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1065,
+      "ruta": "textures/yves_allaire/ex/cretewall_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1066,
+      "ruta": "textures/yves_allaire/ex/cretewall_02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1067,
+      "ruta": "textures/yves_allaire/ex/cretewall_03_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1068,
+      "ruta": "textures/yves_allaire/ex/cretewall_03b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1069,
+      "ruta": "textures/yves_allaire/ex/deswall_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1070,
+      "ruta": "textures/yves_allaire/ex/floor_grate_03_128_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1071,
+      "ruta": "textures/yves_allaire/ex/floor_grate_03_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1072,
+      "ruta": "textures/yves_allaire/ex/floor_grate03_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1073,
+      "ruta": "textures/yves_allaire/ex/floor_mtl_grate_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1074,
+      "ruta": "textures/yves_allaire/ex/floor_mtl_wrn_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1075,
+      "ruta": "textures/yves_allaire/ex/floor_simple_05_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1076,
+      "ruta": "textures/yves_allaire/ex/floor_simplines_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1077,
+      "ruta": "textures/yves_allaire/ex/floor_tile_03_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1078,
+      "ruta": "textures/yves_allaire/ex/floor_tread_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1079,
+      "ruta": "textures/yves_allaire/ex/floorpanel_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1080,
+      "ruta": "textures/yves_allaire/ex/metalplate_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1081,
+      "ruta": "textures/yves_allaire/ex/metal_supp_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1082,
+      "ruta": "textures/yves_allaire/ex/metal_wall_02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1083,
+      "ruta": "textures/yves_allaire/ex/mtl_bigplate_04_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1084,
+      "ruta": "textures/yves_allaire/ex/mtl_bigplate_04b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1085,
+      "ruta": "textures/yves_allaire/ex/mtl_panel_02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1086,
+      "ruta": "textures/yves_allaire/ex/mtl_panel_03_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1087,
+      "ruta": "textures/yves_allaire/ex/mtl_panel_04_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1088,
+      "ruta": "textures/yves_allaire/ex/q2_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1089,
+      "ruta": "textures/yves_allaire/ex/q2_01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1090,
+      "ruta": "textures/yves_allaire/ex/q2_01c_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1091,
+      "ruta": "textures/yves_allaire/ex/q2_01d_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1092,
+      "ruta": "textures/yves_allaire/ex/q2_01e_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1093,
+      "ruta": "textures/yves_allaire/ex/rndfloor_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1094,
+      "ruta": "textures/yves_allaire/ex/rndfloor_02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1095,
+      "ruta": "textures/yves_allaire/ex/rplates_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1096,
+      "ruta": "textures/yves_allaire/ex/steptop_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1097,
+      "ruta": "textures/yves_allaire/ex/trim_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1098,
+      "ruta": "textures/yves_allaire/ex/trim_baseboard_02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1099,
+      "ruta": "textures/yves_allaire/ex/trim_baseboard_03_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1100,
+      "ruta": "textures/yves_allaire/ex/trim_baseboard_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1101,
+      "ruta": "textures/yves_allaire/ex/trim_psimple_04_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1102,
+      "ruta": "textures/yves_allaire/ex/trim_psimple_05_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1103,
+      "ruta": "textures/yves_allaire/ex/trim_simple_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1104,
+      "ruta": "textures/yves_allaire/ex/trim_simple03_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1105,
+      "ruta": "textures/yves_allaire/ex/trim_support_03_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1106,
+      "ruta": "textures/yves_allaire/ex/trim_vert_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1107,
+      "ruta": "textures/yves_allaire/ex/wall_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1108,
+      "ruta": "textures/yves_allaire/ex/wall_01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1109,
+      "ruta": "textures/yves_allaire/ex/wall_b01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1110,
+      "ruta": "textures/yves_allaire/ex/wall_bigrib_02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1111,
+      "ruta": "textures/yves_allaire/ex/wall_bplate_06_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1112,
+      "ruta": "textures/yves_allaire/ex/wall_panel_05_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1113,
+      "ruta": "textures/yves_allaire/ex/wall_panels_08_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1114,
+      "ruta": "textures/yves_allaire/ex/wall_panels_08b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1115,
+      "ruta": "textures/yves_allaire/ex/wall_pipe_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1116,
+      "ruta": "textures/yves_allaire/ex/wall_u207_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1117,
+      "ruta": "textures/yves_allaire/ex/metal_plate_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1118,
+      "ruta": "textures/yves_allaire/ex/metal_plate_01b_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1119,
+      "ruta": "textures/yves_allaire/ex/metal_plate_01c_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1120,
+      "ruta": "textures/yves_allaire/ex/metal_base_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1121,
+      "ruta": "textures/yves_allaire/ex/metal_base_02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1122,
+      "ruta": "textures/yves_allaire/ex/metal_base_03_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1123,
+      "ruta": "textures/yves_allaire/ex/metal_base_04_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1124,
+      "ruta": "textures/yves_allaire/ex/metal_base_05_rust_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1125,
+      "ruta": "textures/yves_allaire/ex/metal_base_06_rust_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1126,
+      "ruta": "textures/yves_allaire/ex/metal_base_07_rust_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1127,
+      "ruta": "textures/yves_allaire/ex/metal_floor_02_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1128,
+      "ruta": "textures/yves_allaire/ex/metal_rib_01_d.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1129,
+      "ruta": "dg/f_p2_v.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1130,
+      "ruta": "dg/floor_lava2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1131,
+      "ruta": "dg/mad051.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1132,
+      "ruta": "dg/mad064.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/mad064.jpg"
+    },
+    {
+      "indice": 1133,
+      "ruta": "dg/mad066.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/mad066.jpg"
+    },
+    {
+      "indice": 1134,
+      "ruta": "dg/mad067.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1135,
+      "ruta": "dg/mot001.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1136,
+      "ruta": "dg/mot067.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1137,
+      "ruta": "dg/mot067_2.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1138,
+      "ruta": "dg/mot088.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1139,
+      "ruta": "dg/mot190.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1140,
+      "ruta": "dg/mur000.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1141,
+      "ruta": "dg/mur013.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1142,
+      "ruta": "dg/mur017.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1143,
+      "ruta": "dg/mur033.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1144,
+      "ruta": "dg/mur039.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/mur039.jpg"
+    },
+    {
+      "indice": 1145,
+      "ruta": "dg/mur043.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/mur043.jpg"
+    },
+    {
+      "indice": 1146,
+      "ruta": "dg/mur045.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1147,
+      "ruta": "dg/mur051.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1148,
+      "ruta": "dg/mur054.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1149,
+      "ruta": "dg/mur058.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1150,
+      "ruta": "dg/mur059.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1151,
+      "ruta": "dg/mur063.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/mur063.jpg"
+    },
+    {
+      "indice": 1152,
+      "ruta": "dg/mur064.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1153,
+      "ruta": "dg/mur079.jpg",
+      "estado": "escalada",
+      "archivo": "textures/dg/mur079.jpg"
+    },
+    {
+      "indice": 1154,
+      "ruta": "dg/mur080.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1155,
+      "ruta": "dg/mur081.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1156,
+      "ruta": "dg/mur087.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1157,
+      "ruta": "dg/mur088.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1158,
+      "ruta": "dg/mur109.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1159,
+      "ruta": "dg/mur109_old.jpg",
+      "estado": "dato"
+    },
+    {
+      "indice": 1160,
+      "ruta": "dg/mur127.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1161,
+      "ruta": "dg/mur135.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1162,
+      "ruta": "dg/mur139.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1163,
+      "ruta": "dg/muv025.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1164,
+      "ruta": "dg/muv030.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1165,
+      "ruta": "dg/muv032.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1166,
+      "ruta": "dg/nie048.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1167,
+      "ruta": "dg/trail.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1168,
+      "ruta": "makke/dirt01.jpg",
+      "estado": "original",
+      "archivo": "makke/dirt01.jpg"
+    },
+    {
+      "indice": 1169,
+      "ruta": "makke/dirt02.jpg",
+      "estado": "original",
+      "archivo": "makke/dirt02.jpg"
+    },
+    {
+      "indice": 1170,
+      "ruta": "makke/platten.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1171,
+      "ruta": "makke/platten_var1.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1172,
+      "ruta": "textures/nieb/bonepile.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1173,
+      "ruta": "textures/swatllama/blackgranite_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1174,
+      "ruta": "textures/swatllama/fadedwood_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1175,
+      "ruta": "textures/swatllama/fadedwood2_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1176,
+      "ruta": "textures/swatllama/plainwood_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1177,
+      "ruta": "textures/swatllama/woodpanel_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1178,
+      "ruta": "textures/swatllama/woodpanel2_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1179,
+      "ruta": "textures/swatllama/ice_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1180,
+      "ruta": "textures/swatllama/tiles_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1181,
+      "ruta": "textures/swatllama/granitecliff_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1182,
+      "ruta": "textures/swatllama/rock_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1183,
+      "ruta": "textures/swatllama/woodfloor_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1184,
+      "ruta": "textures/swatllama/brickwall_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1185,
+      "ruta": "textures/swatllama/brickwall2_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1186,
+      "ruta": "textures/swatllama/woodsiding_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1187,
+      "ruta": "textures/swatllama/snow_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1188,
+      "ruta": "textures/swatllama/snow2_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1189,
+      "ruta": "textures/swatllama/brickwall3_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1190,
+      "ruta": "textures/swatllama/rust_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1191,
+      "ruta": "textures/swatllama/cobblestone_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1192,
+      "ruta": "textures/swatllama/cobblestonemoss_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1193,
+      "ruta": "textures/swatllama/cobblestonemoss2_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1194,
+      "ruta": "textures/swatllama/cobblestonemoss3_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1195,
+      "ruta": "textures/swatllama/cobblestonepavement_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1196,
+      "ruta": "textures/swatllama/cobblestonepavement2_c.jpg",
+      "estado": "missing"
+    },
+    {
+      "indice": 1197,
+      "ruta": "textures/hhh316/seamless_beach_sand.jpg",
+      "estado": "missing"
+    }
+  ],
+  "resumen": {
+    "escalada": 49,
+    "original": 21,
+    "dato": 2,
+    "missing": 1126
+  }
+}
